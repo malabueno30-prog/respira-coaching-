@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://malabueno30-prog.github.io/respira-coaching/sitemap.xml
