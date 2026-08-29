@@ -1,0 +1,12 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración sobre higiene del sueño">
+  <rect width="480" height="300" fill="#2B3A3A"/>
+  <path d="M290 90a55 55 0 1 0 0 110 65 65 0 0 1 0-110z" fill="#E8DCC8"/>
+  <circle cx="120" cy="80" r="2.4" fill="#F3EDE0"/>
+  <circle cx="160" cy="130" r="1.6" fill="#F3EDE0"/>
+  <circle cx="90" cy="160" r="1.8" fill="#F3EDE0"/>
+  <circle cx="200" cy="60" r="1.4" fill="#F3EDE0"/>
+  <circle cx="140" cy="200" r="1.6" fill="#F3EDE0"/>
+  <circle cx="360" cy="230" r="1.6" fill="#F3EDE0"/>
+  <circle cx="400" cy="90" r="1.4" fill="#F3EDE0"/>
+  <path d="M60 230 Q120 210 180 230 T300 230 T420 230" fill="none" stroke="#7A8B6F" stroke-width="2" opacity=".5"/>
+</svg>

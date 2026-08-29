@@ -1,0 +1,24 @@
+<svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de figura en movimiento deportivo">
+  <circle cx="240" cy="240" r="230" fill="#F3EDE0"/>
+  <circle cx="240" cy="240" r="230" fill="none" stroke="#E8DCC8" stroke-width="1.5"/>
+  <g fill="none" stroke="#7A8B6F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <!-- torso -->
+    <path d="M240 150 L232 250"/>
+    <!-- arms: one raised (lifting), one back -->
+    <path d="M232 175 L170 130"/>
+    <path d="M232 190 L300 150"/>
+    <!-- legs: lunge / stride -->
+    <path d="M232 250 L180 340 L165 400"/>
+    <path d="M232 250 L290 320 L320 390"/>
+  </g>
+  <!-- head -->
+  <circle cx="245" cy="122" r="26" fill="#5C6B52"/>
+  <!-- barbell in raised hand, nod to halterofilia -->
+  <g stroke="#B5654A" stroke-width="9" stroke-linecap="round">
+    <path d="M140 118 L200 138"/>
+    <circle cx="132" cy="115" r="17" fill="none" stroke="#B5654A" stroke-width="9"/>
+  </g>
+  <!-- orbit rings echoing the breath motif -->
+  <circle cx="240" cy="240" r="180" fill="none" stroke="#7A8B6F" stroke-width="1" opacity=".35" stroke-dasharray="2 10"/>
+  <circle cx="240" cy="240" r="205" fill="none" stroke="#B5654A" stroke-width="1" opacity=".25" stroke-dasharray="2 10"/>
+</svg>

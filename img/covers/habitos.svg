@@ -1,0 +1,11 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración sobre construir hábitos duraderos">
+  <rect width="480" height="300" fill="#E8DCC8"/>
+  <g fill="#5C6B52">
+    <rect x="80" y="220" width="50" height="40"/>
+    <rect x="150" y="190" width="50" height="70"/>
+    <rect x="220" y="150" width="50" height="110"/>
+    <rect x="290" y="105" width="50" height="155"/>
+  </g>
+  <circle cx="360" cy="90" r="14" fill="#B5654A"/>
+  <path d="M300 150 L345 100" stroke="#B5654A" stroke-width="3" stroke-dasharray="4 6" fill="none"/>
+</svg>

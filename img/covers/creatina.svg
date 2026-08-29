@@ -1,0 +1,15 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración sobre creatina y entrenamiento de fuerza">
+  <rect width="480" height="300" fill="#E8DCC8"/>
+  <circle cx="240" cy="150" r="200" fill="#F3EDE0" opacity=".6"/>
+  <g stroke="#5C6B52" stroke-width="10" stroke-linecap="round">
+    <path d="M150 150 L330 150"/>
+  </g>
+  <g fill="none" stroke="#B5654A" stroke-width="10">
+    <circle cx="140" cy="150" r="26"/>
+    <circle cx="340" cy="150" r="26"/>
+  </g>
+  <g fill="none" stroke="#7A8B6F" stroke-width="2" opacity=".5">
+    <circle cx="240" cy="150" r="90"/>
+    <circle cx="240" cy="150" r="110"/>
+  </g>
+</svg>

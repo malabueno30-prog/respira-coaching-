@@ -1,0 +1,8 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración sobre gestión del estrés">
+  <rect width="480" height="300" fill="#F3EDE0"/>
+  <g fill="none" stroke="#7A8B6F" stroke-width="3" stroke-linecap="round">
+    <path d="M40 90 Q90 60 140 90 T240 90 T340 90 T440 90" opacity=".35"/>
+    <path d="M40 150 Q90 110 140 150 T240 150 T340 150 T440 150" opacity=".6"/>
+    <path d="M40 210 Q90 160 140 210 T240 210 T340 210 T440 210" stroke="#B5654A"/>
+  </g>
+</svg>
