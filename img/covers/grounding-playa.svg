@@ -1,0 +1,21 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de una persona descalza caminando por la orilla de la playa">
+  <rect width="480" height="300" fill="#E8DCC8"/>
+  <rect y="190" width="480" height="110" fill="#D9C79E"/>
+  <path d="M0 190 Q120 175 240 190 T480 190 V210 Q360 195 240 210 T0 210 Z" fill="#9FC3CC"/>
+  <path d="M0 185 Q120 172 240 185 T480 185" fill="none" stroke="#7FA9B3" stroke-width="3" opacity="0.7"/>
+  <circle cx="400" cy="60" r="30" fill="#E7A15A"/>
+  <g fill="none" stroke="#5C6B52" stroke-width="6" stroke-linecap="round">
+    <circle cx="150" cy="150" r="14" fill="#5C6B52" stroke="none"/>
+    <path d="M150 164 L150 220"/>
+    <path d="M150 180 L120 205"/>
+    <path d="M150 180 L182 200"/>
+    <path d="M150 220 L128 262"/>
+    <path d="M150 220 L172 262"/>
+  </g>
+  <g stroke="#B5654A" stroke-width="3" stroke-linecap="round" opacity="0.8">
+    <path d="M100 270 q5 -6 10 0"/>
+    <path d="M118 275 q5 -6 10 0"/>
+    <path d="M200 265 q5 -6 10 0"/>
+    <path d="M218 270 q5 -6 10 0"/>
+  </g>
+</svg>

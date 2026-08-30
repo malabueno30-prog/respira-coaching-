@@ -1,0 +1,26 @@
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de dos pies descalzos dejando huellas en la arena junto a la orilla">
+  <rect width="480" height="260" fill="#D9C79E"/>
+  <path d="M0 40 Q120 25 240 40 T480 40 V70 Q360 55 240 70 T0 70 Z" fill="#9FC3CC"/>
+  <path d="M0 34 Q120 22 240 34 T480 34" fill="none" stroke="#7FA9B3" stroke-width="3" opacity="0.7"/>
+  <g fill="#B5654A" opacity="0.85">
+    <ellipse cx="180" cy="150" rx="16" ry="26"/>
+    <ellipse cx="205" cy="130" rx="5" ry="7"/>
+    <ellipse cx="217" cy="128" rx="5" ry="7"/>
+    <ellipse cx="228" cy="129" rx="4.5" ry="6.5"/>
+    <ellipse cx="238" cy="132" rx="4" ry="6"/>
+    <ellipse cx="246" cy="137" rx="3.5" ry="5"/>
+
+    <ellipse cx="280" cy="195" rx="16" ry="26"/>
+    <ellipse cx="305" cy="175" rx="5" ry="7"/>
+    <ellipse cx="317" cy="173" rx="5" ry="7"/>
+    <ellipse cx="328" cy="174" rx="4.5" ry="6.5"/>
+    <ellipse cx="338" cy="177" rx="4" ry="6"/>
+    <ellipse cx="346" cy="182" rx="3.5" ry="5"/>
+  </g>
+  <g fill="none" stroke="#C9B788" stroke-width="2" opacity="0.6">
+    <circle cx="90" cy="90" r="3"/>
+    <circle cx="120" cy="200" r="4"/>
+    <circle cx="400" cy="90" r="3"/>
+    <circle cx="60" cy="160" r="2.5"/>
+  </g>
+</svg>
