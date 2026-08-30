@@ -1,0 +1,46 @@
+<svg viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portada del e-book Respira sin Ansiedad: figura serena rodeada de ondas de respiración">
+  <rect width="480" height="640" fill="#F3EDE0"/>
+
+  <!-- halo de fondo -->
+  <circle cx="240" cy="260" r="210" fill="#E8DCC8"/>
+  <circle cx="240" cy="260" r="150" fill="#F3EDE0"/>
+
+  <!-- ondas concéntricas de respiración -->
+  <g fill="none" stroke="#7A8B6F" stroke-width="3" stroke-linecap="round">
+    <circle cx="240" cy="260" r="90" opacity=".35"/>
+    <circle cx="240" cy="260" r="120" opacity=".25"/>
+    <circle cx="240" cy="260" r="150" opacity=".15"/>
+  </g>
+  <circle cx="240" cy="260" r="60" fill="none" stroke="#B5654A" stroke-width="3"/>
+
+  <!-- figura sentada en meditación, estilo plano -->
+  <g fill="#5C6B52">
+    <!-- cuerpo / túnica -->
+    <path d="M240 210
+             C205 210 178 236 172 268
+             C166 300 178 322 200 328
+             L280 328
+             C302 322 314 300 308 268
+             C302 236 275 210 240 210 Z"/>
+    <!-- cabeza -->
+    <circle cx="240" cy="190" r="26" fill="#5C6B52"/>
+    <!-- brazos cruzados en el regazo -->
+    <path d="M196 300 Q240 316 284 300 Q284 312 240 320 Q196 312 196 300 Z" fill="#7A8B6F"/>
+    <!-- piernas cruzadas -->
+    <path d="M172 328 Q240 350 308 328 L308 340 Q240 362 172 340 Z" fill="#7A8B6F"/>
+  </g>
+
+  <!-- pequeñas líneas de respiración subiendo -->
+  <g stroke="#B5654A" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7">
+    <path d="M220 150 Q216 130 224 112"/>
+    <path d="M240 146 Q240 124 240 104"/>
+    <path d="M260 150 Q264 130 256 112"/>
+  </g>
+
+  <!-- título dentro de la portada -->
+  <text x="240" y="450" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="34" fill="#2B3A3A">Respira sin Ansiedad</text>
+  <text x="240" y="486" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#5C6B52">Un plan de 14 días</text>
+
+  <!-- marca -->
+  <text x="240" y="560" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="2" fill="#7A8B6F">RESPIRA COACHING</text>
+</svg>
