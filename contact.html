@@ -33,28 +33,20 @@
       <p>¿Dudas sobre un artículo, una guía descargable, o algo del propio sitio? Cuéntanoslo y te respondemos en menos de 48 horas. Esto no es un formulario para reservar sesiones: aquí no se ofrece acompañamiento 1:1.</p>
     </div>
 
-    <!--
-      IMPORTANTE: GitHub Pages es estático (sin backend), así que este
-      formulario usa Formspree (gratuito) para recibir los mensajes por email.
-      Pasos: crea una cuenta en https://formspree.io, crea un formulario nuevo,
-      y sustituye TU_ID_DE_FORMSPREE por el ID que te den.
-    -->
-   <form action="https://cris45.app.n8n.cloud/webhook/contact-form" method="POST" style="max-width:520px;">
-  <div class="form-field">
-    <label for="name">Nombre</label>
-    <input type="text" id="name" name="nombre" required>
-  </div>
-  <div class="form-field">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
-  </div>
-  <div class="form-field">
-    <label for="message">Tu mensaje</label>
-    <textarea id="message" name="mensaje" required></textarea>
-  </div>
-  <button type="submit" class="btn btn-solid">Enviar mensaje</button>
-</form>      
-    <button type="submit" class="btn btn-solid">Enviar mensaje</button>
+    <form action="https://cris45.app.n8n.cloud/webhook/contact-form" method="POST" style="max-width:520px;">
+      <div class="form-field">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="nombre" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-field">
+        <label for="message">Tu mensaje</label>
+        <textarea id="message" name="mensaje" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid">Enviar mensaje</button>
     </form>
   </div>
 </section>
