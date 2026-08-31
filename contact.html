@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
 <header>
   <nav class="nav">
     <a href="index.html" class="logo">respira<span>.</span></a>
@@ -24,7 +23,6 @@
     </ul>
   </nav>
 </header>
-
 <section style="padding-top:4rem;">
   <div class="wrap">
     <div class="section-head">
@@ -32,8 +30,10 @@
       <h1>Escríbenos</h1>
       <p>¿Dudas sobre un artículo, una guía descargable, o algo del propio sitio? Cuéntanoslo y te respondemos en menos de 48 horas. Esto no es un formulario para reservar sesiones: aquí no se ofrece acompañamiento 1:1.</p>
     </div>
-
-    <form action="https://cris45.app.n8n.cloud/webhook/contact-form" method="POST" style="max-width:520px;">
+    <form action="https://api.web3forms.com/submit" method="POST" style="max-width:520px;">
+      <input type="hidden" name="access_key" value="d69fb041-db4f-41bf-b6b4-aba2510b2b6b">
+      <input type="hidden" name="subject" value="Nuevo mensaje de contacto · Respira Coaching">
+      <input type="hidden" name="from_name" value="Respira Coaching">
       <div class="form-field">
         <label for="name">Nombre</label>
         <input type="text" id="name" name="nombre" required>
@@ -50,7 +50,6 @@
     </form>
   </div>
 </section>
-
 <footer>
   <div class="wrap footer-grid">
     <p>© 2026 Respira Coaching. Todos los derechos reservados.</p>
@@ -61,7 +60,6 @@
     </div>
   </div>
 </footer>
-
 <script src="js/main.js"></script>
 </body>
 </html>
