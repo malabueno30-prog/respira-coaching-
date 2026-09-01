@@ -7,9 +7,108 @@
 <meta name="description" content="Artículos prácticos sobre sueño, gestión del estrés y construcción de hábitos saludables.">
 <link rel="canonical" href="https://malabueno30-prog.github.io/respira-coaching-/blog.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<!-- Script oficial de Gumroad para compra y checkout directo -->
+<script src="https://gumroad.com/js/gumroad.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6882361228091192" crossorigin="anonymous"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6882361228091192",
+    enable_page_level_ads: true
+  });
+</script>
+<style>
+  /* Estilos específicos para la sección de Guías Gumroad en coherencia con el blog */
+  .guias-section-blog {
+    padding: 4.5rem 0 3.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 4rem;
+    background: #FAF9F5;
+  }
+  .guias-grid-blog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+    margin-top: 2rem;
+  }
+  .guia-card-blog {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .guia-card-blog:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+  .guia-card-blog.popular {
+    border: 2px solid #059669;
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.12);
+  }
+  .guia-badge-tag {
+    display: inline-block;
+    background: #ECFDF5;
+    color: #047857;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .guia-price-row {
+    background: #FAF9F5;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .guia-price-val {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+  }
+  .guia-price-old {
+    font-size: 13px;
+    color: #9CA3AF;
+    text-decoration: line-through;
+    margin-left: 6px;
+  }
+  .gumroad-btn-blog {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #111827;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 14px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    box-sizing: border-box;
+  }
+  .gumroad-btn-blog:hover {
+    background: #233939;
+  }
+  .guia-card-blog.popular .gumroad-btn-blog {
+    background: #059669;
+  }
+  .guia-card-blog.popular .gumroad-btn-blog:hover {
+    background: #047857;
+  }
+</style>
 </head>
 <body>
 
@@ -18,9 +117,10 @@
     <a href="index.html" class="logo">respira<span>.</span></a>
     <button class="nav-toggle" aria-label="Abrir menú">☰</button>
     <ul class="nav-links">
-      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="index.html#servicios">Cómo funciona</a></li>
+      <li><a href="#guias">Guías y Protocolos</a></li>
       <li><a href="blog.html">Blog</a></li>
-      <li><a href="about.html">Sobre mí</a></li>
+      <li><a href="about.html">Sobre el proyecto</a></li>
       <li><a href="contact.html">Contacto</a></li>
     </ul>
   </nav>
@@ -34,6 +134,30 @@
       <p>Nada de fórmulas mágicas: rutinas concretas, explicadas con claridad, que puedes empezar a aplicar hoy.</p>
     </div>
     <div class="post-list">
+      <a class="post-row" href="posts/sensei-tatami-voluntad-grandes-fundadores.html">
+        <span class="date">31 AGO 2026</span>
+        <div class="post-thumb"><img src="img/covers/sensei-tatami.svg" alt="" loading="lazy"></div>
+        <div>
+          <h3>Quién es un sensei: el tatami, la voluntad y los grandes fundadores de las artes marciales</h3>
+          <p>Qué representa realmente la figura del sensei, y quiénes fueron Jigoro Kano, So Doshin y Bruce Lee.</p>
+        </div>
+      </a>
+      <a class="post-row" href="posts/grounding-playa-tendencia-beneficios.html">
+        <span class="date">30 AGO 2026</span>
+        <div class="post-thumb"><img src="img/covers/grounding-playa.svg" alt="" loading="lazy"></div>
+        <div>
+          <h3>Grounding en la playa: la tendencia que arrasa este verano</h3>
+          <p>Qué es esta moda que ves en redes, qué dice la ciencia y cómo practicarla bien.</p>
+        </div>
+      </a>
+      <a class="post-row" href="posts/tecnica-respiracion-ansiedad-3-minutos.html">
+        <span class="date">30 AGO 2026</span>
+        <div class="post-thumb"><img src="img/covers/ebook-respira-sin-ansiedad.svg" alt="" loading="lazy"></div>
+        <div>
+          <h3>Cómo cortar un pico de ansiedad en 3 minutos</h3>
+          <p>Una técnica de respiración que puedes aplicar ahora mismo, sin esperar a nada.</p>
+        </div>
+      </a>
       <a class="post-row" href="posts/heavy-duty-mike-mentzer.html">
         <span class="date">29 AGO 2026</span>
         <div class="post-thumb"><img src="img/covers/heavy-duty.svg" alt="" loading="lazy"></div>
@@ -86,11 +210,101 @@
   </div>
 </section>
 
+<!-- SECCIÓN GUÍAS Y PROTOCOLOS DESCARGABLES (CONECTADAS A GUMROAD) -->
+<section id="guias" class="guias-section-blog">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom: 2rem;">
+      <span class="eyebrow" style="color: #047857; background: #ECFDF5; padding: 4px 12px; border-radius: 9999px; font-weight: 700;">Guías y Protocolos</span>
+      <h2 style="font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 600; margin: 0.5rem 0 0.75rem 0; color: #111827;">Aprende a tu ritmo. Sin suscripciones.</h2>
+      <p style="color: #4B5563; font-size: 1rem;">Descarga inmediata con pago seguro procesado a través de <strong>Gumroad</strong>. Compatible con tu billetera digital (Apple Pay, Google Pay y tarjetas).</p>
+    </div>
+
+    <div class="guias-grid-blog">
+      
+      <!-- Guía 1 -->
+      <div class="guia-card-blog popular">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <span style="font-family:'Fraunces',serif; font-size:24px; font-weight:700; color:#FF5733;">01</span>
+            <span class="guia-badge-tag">PDF + 6 Audios</span>
+          </div>
+          <h3 style="font-family:'Fraunces',serif; font-size:20px; font-weight:600; color:#111827; margin:0 0 6px 0;">Respira sin Ansiedad</h3>
+          <p style="font-size:13px; font-weight:600; color:#059669; margin:0 0 12px 0;">14 días para regular el sistema nervioso</p>
+          <p style="font-size:13px; color:#4B5563; line-height:1.5; margin:0;">
+            Protocolos de respiración basados en neurociencia para desactivar la reactividad al estrés, calmar taquicardias y recuperar el foco en 3 minutos.
+          </p>
+          <div class="guia-price-row">
+            <div>
+              <span class="guia-price-val">19 €</span>
+              <span class="guia-price-old">39 €</span>
+            </div>
+            <span style="font-size:11px; font-weight:700; color:#059669; text-transform:uppercase;">Pago único</span>
+          </div>
+        </div>
+        <a class="gumroad-button gumroad-btn-blog" href="https://gumroad.com/l/respira-sin-ansiedad" target="_blank">
+          Comprar en Gumroad (19 €)
+        </a>
+      </div>
+
+      <!-- Guía 2 -->
+      <div class="guia-card-blog">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <span style="font-family:'Fraunces',serif; font-size:24px; font-weight:700; color:#FF5733;">02</span>
+            <span class="guia-badge-tag">PDF + Audios</span>
+          </div>
+          <h3 style="font-family:'Fraunces',serif; font-size:20px; font-weight:600; color:#111827; margin:0 0 6px 0;">Duerme de verdad</h3>
+          <p style="font-size:13px; font-weight:600; color:#059669; margin:0 0 12px 0;">21 días de higiene del sueño y calma</p>
+          <p style="font-size:13px; color:#4B5563; line-height:1.5; margin:0;">
+            Rutina nocturna paso a paso, desconexión de pantallas sin culpa y técnicas de inducción al descanso profundo sin depender de suplementos.
+          </p>
+          <div class="guia-price-row">
+            <div>
+              <span class="guia-price-val">24 €</span>
+              <span class="guia-price-old">45 €</span>
+            </div>
+            <span style="font-size:11px; font-weight:700; color:#059669; text-transform:uppercase;">Pago único</span>
+          </div>
+        </div>
+        <a class="gumroad-button gumroad-btn-blog" href="https://gumroad.com/l/duerme-de-verdad" target="_blank">
+          Comprar en Gumroad (24 €)
+        </a>
+      </div>
+
+      <!-- Guía 3 -->
+      <div class="guia-card-blog">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <span style="font-family:'Fraunces',serif; font-size:24px; font-weight:700; color:#FF5733;">03</span>
+            <span class="guia-badge-tag">PDF + Workbook</span>
+          </div>
+          <h3 style="font-family:'Fraunces',serif; font-size:20px; font-weight:600; color:#111827; margin:0 0 6px 0;">Hábitos que duran</h3>
+          <p style="font-size:13px; font-weight:600; color:#059669; margin:0 0 12px 0;">4 semanas para cambiar tu relación con el estrés</p>
+          <p style="font-size:13px; color:#4B5563; line-height:1.5; margin:0;">
+            El método para construir micro-hábitos sostenibles que no dependan exclusivamente de la fuerza de voluntad cuando la semana se complica.
+          </p>
+          <div class="guia-price-row">
+            <div>
+              <span class="guia-price-val">24 €</span>
+              <span class="guia-price-old">49 €</span>
+            </div>
+            <span style="font-size:11px; font-weight:700; color:#059669; text-transform:uppercase;">Pago único</span>
+          </div>
+        </div>
+        <a class="gumroad-button gumroad-btn-blog" href="https://gumroad.com/l/habitos-que-duran" target="_blank">
+          Comprar en Gumroad (24 €)
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap footer-grid">
     <p>© 2026 Respira Coaching. Todos los derechos reservados.</p>
     <div style="display:flex;gap:1.5rem;">
-      <a href="about.html">Sobre mí</a>
+      <a href="about.html">Sobre el proyecto</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contacto</a>
     </div>
