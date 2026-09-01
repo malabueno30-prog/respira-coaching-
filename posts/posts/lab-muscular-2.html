@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAB MUSCULAR: descubre qué está frenando tu progreso · Respira Coaching</title>
+<meta name="description" content="Test rápido para identificar qué está frenando tu progreso en el gimnasio, con diagnóstico personalizado y calculadora de dosis de creatina por tu peso.">
+<link rel="canonical" href="https://malabueno30-prog.github.io/respira-coaching-/posts/lab-muscular.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6882361228091192" crossorigin="anonymous"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6882361228091192",
+    enable_page_level_ads: true
+  });
+</script>
+<style>
+  .lm-wrap{max-width:640px;margin:0 auto;padding:2rem 1.25rem 4rem;}
+  .lm-hero{text-align:center;margin-bottom:2.5rem;}
+  .lm-hero h1{font-size:2rem;margin-bottom:.5rem;}
+  .lm-hero p{color:var(--muted,#777);}
+  .lm-step{display:none;}
+  .lm-step.active{display:block;animation:lmFade .35s ease;}
+  @keyframes lmFade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+  .lm-options{display:grid;gap:.9rem;margin-top:1.5rem;}
+  .lm-option{
+    display:block;width:100%;text-align:left;padding:1.1rem 1.3rem;
+    border:2px solid #d8cbb0;border-radius:12px;background:#fff;
+    font-family:inherit;font-size:1.05rem;font-weight:600;color:#2b2b28;
+    cursor:pointer;transition:.15s ease;
+  }
+  .lm-option:hover{border-color:var(--clay,#B5654A);transform:translateY(-2px);}
+  .lm-option span{display:block;font-weight:400;font-size:.9rem;color:var(--muted,#777);margin-top:.3rem;}
+  .lm-diagnosis{
+    background:#fff;border-radius:14px;padding:1.6rem;margin-top:1.5rem;
+    border-left:5px solid var(--clay,#B5654A);
+  }
+  .lm-diagnosis h2{margin-top:0;font-size:1.3rem;}
+  .lm-calc{margin-top:1.8rem;background:#f4ede0;border-radius:14px;padding:1.6rem;}
+  .lm-calc label{display:block;font-weight:600;margin-bottom:.5rem;}
+  .lm-calc input{
+    width:100%;padding:.8rem 1rem;border-radius:8px;border:1px solid #d8cbb0;
+    font-size:1.1rem;font-family:inherit;margin-bottom:1rem;
+  }
+  .lm-calc button{
+    background:var(--olive,#5C6B52);color:#fff;border:none;border-radius:8px;
+    padding:.8rem 1.4rem;font-weight:600;font-size:1rem;cursor:pointer;width:100%;
+  }
+  .lm-result{
+    margin-top:1.2rem;padding:1.1rem;border-radius:10px;background:#fff;
+    display:none;font-size:1.05rem;line-height:1.5;
+  }
+  .lm-result.show{display:block;}
+  .lm-result strong{color:var(--clay,#B5654A);}
+  .lm-pricing{margin-top:2.5rem;display:grid;gap:1.2rem;}
+  .lm-plan{
+    background:#fff;border-radius:14px;padding:1.6rem;border:2px solid #e5dbc7;
+    text-align:center;
+  }
+  .lm-plan.featured{border-color:var(--clay,#B5654A);position:relative;}
+  .lm-badge{
+    position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+    background:var(--clay,#B5654A);color:#fff;font-size:.75rem;font-weight:700;
+    padding:.25rem .8rem;border-radius:999px;letter-spacing:.03em;
+  }
+  .lm-plan .lm-price{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;margin:.4rem 0;}
+  .lm-plan .lm-price small{font-size:1rem;font-weight:400;color:var(--muted,#777);}
+  .lm-plan ul{text-align:left;margin:1rem 0;padding-left:1.2rem;}
+  .lm-buy{
+    display:inline-block;width:100%;text-align:center;padding:.95rem 1rem;
+    background:var(--clay,#B5654A);color:#fff;border-radius:9px;font-weight:700;
+    text-decoration:none;font-size:1.05rem;letter-spacing:.02em;
+  }
+  .lm-buy:hover{opacity:.9;}
+  .lm-methods{margin-top:.6rem;font-size:.8rem;color:var(--muted,#777);}
+  .lm-back{background:none;border:none;color:var(--muted,#777);font-size:.9rem;cursor:pointer;margin-top:1.5rem;text-decoration:underline;padding:0;}
+  .lm-disclaimer{font-size:.8rem;color:var(--muted,#777);margin-top:2rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="../index.html" class="logo">respira<span>.</span></a>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <ul class="nav-links">
+      <li><a href="../index.html#servicios">Cómo funciona</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../about.html">Sobre el proyecto</a></li>
+      <li><a href="../contact.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="lm-wrap">
+
+  <!-- PASO 1: pregunta -->
+  <div class="lm-step active" id="step-1">
+    <div class="lm-hero">
+      <span class="eyebrow">Lab Muscular</span>
+      <h1>¿Qué está frenando tu progreso ahora mismo?</h1>
+      <p>Responde una sola pregunta y te damos un diagnóstico hecho para tu caso, con tu dosis exacta calculada por peso.</p>
+    </div>
+    <div class="lm-options">
+      <button class="lm-option" onclick="lmSelect('recupero')">
+        No recupero entre entrenos
+        <span>Llegas a cada sesión con agujetas, cansado o sin fuerza del día anterior.</span>
+      </button>
+      <button class="lm-option" onclick="lmSelect('hincho')">
+        Me hincho / retengo líquido
+        <span>Notas hinchazón o peso de agua nada más empezar a suplementarte.</span>
+      </button>
+      <button class="lm-option" onclick="lmSelect('ansiedad')">
+        Me da ansiedad / nervios con los suplementos
+        <span>Te late fuerte el corazón o te pones nervioso tras tomar pre-entreno o estimulantes.</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- PASO 2: diagnóstico + calculadora -->
+  <div class="lm-step" id="step-2">
+    <div class="lm-diagnosis" id="lm-diagnosis-box"></div>
+
+    <div class="lm-calc">
+      <label for="lm-peso">Tu peso corporal (kg)</label>
+      <input type="number" id="lm-peso" placeholder="Ej. 75" min="30" max="200">
+      <button onclick="lmCalcular()">Calcular mi dosis</button>
+      <div class="lm-result" id="lm-result"></div>
+    </div>
+
+    <button class="lm-back" onclick="lmBack()">← Volver a elegir otra opción</button>
+  </div>
+
+  <!-- PASO 3: pricing (aparece tras calcular) -->
+  <div class="lm-step" id="step-3">
+    <div class="lm-hero">
+      <h2>Tu plan Lab Muscular</h2>
+      <p>Con tu diagnóstico y tu dosis ya calculados, esto es lo que incluye cada opción:</p>
+    </div>
+
+    <div class="lm-pricing">
+      <div class="lm-plan">
+        <h3>Lab Muscular</h3>
+        <div class="lm-price">19€</div>
+        <ul>
+          <li>Diagnóstico personalizado según tu freno</li>
+          <li>Calculadora de dosis por peso corporal</li>
+          <li>Guía de toma diaria (cuándo y cómo)</li>
+          <li>PDF descargable, acceso inmediato</li>
+        </ul>
+        <a class="lm-buy" href="https://buy.stripe.com/bJe8wPbVR5VU7EGa0oaIM00" target="_blank" rel="noopener">COMPRAR AHORA</a>
+        <p class="lm-methods">💳 Tarjeta · Bizum · PayPal</p>
+      </div>
+
+      <div class="lm-plan featured">
+        <span class="lm-badge">Más completo</span>
+        <h3>Pack Lab Muscular</h3>
+        <div class="lm-price">29€ <small>en vez de 19€ + extras</small></div>
+        <ul>
+          <li>Todo lo del plan Lab Muscular</li>
+          <li>Tabla de musculatura ilustrada (grupos y ejercicios clave)</li>
+          <li>Protocolo de 4 semanas ajustado a tu freno</li>
+          <li>Acceso a futuras actualizaciones del PDF</li>
+        </ul>
+        <a class="lm-buy" href="https://buy.stripe.com/3cIbJ1bVRfwu2km1tSaIM01" target="_blank" rel="noopener">COMPRAR AHORA</a>
+        <p class="lm-methods">💳 Tarjeta · Bizum · PayPal</p>
+      </div>
+    </div>
+
+    <p class="lm-disclaimer">La calculadora ofrece una orientación general basada en fórmulas estándar de suplementación con creatina monohidrato. No sustituye el consejo de un nutricionista o médico deportivo, especialmente si tienes alguna condición de salud previa (renal, cardíaca o similar) o tomas otra medicación.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap footer-grid">
+    <p>© 2026 Respira Coaching. Todos los derechos reservados.</p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="../about.html">Sobre el proyecto</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  const lmDiagnosticos = {
+    recupero: {
+      titulo: "Tu freno: recuperación insuficiente",
+      texto: "Si llegas a cada sesión sin haber recuperado del todo, el problema casi nunca es el entrenamiento en sí, sino lo que pasa entre sesión y sesión. La creatina ayuda aquí porque aumenta la reserva de energía disponible en el músculo, lo que se traduce en menos fatiga acumulada de un entreno a otro. Tu protocolo debe priorizar una dosis diaria constante (no solo pre-entreno) y frecuencia de entreno ajustada a tu grupo muscular."
+    },
+    hincho: {
+      titulo: "Tu freno: retención de agua",
+      texto: "La hinchazón inicial con creatina es normal y esperable: el músculo retiene agua intracelular, no es \"grasa\" ni un efecto negativo. El error habitual es hacer una fase de carga muy agresiva (dosis altas los primeros días) cuando no hace falta. Con una dosis diaria constante y moderada, ajustada a tu peso, ese efecto se minimiza y se estabiliza en 1-2 semanas."
+    },
+    ansiedad: {
+      titulo: "Tu freno: sensibilidad a estimulantes",
+      texto: "Si notas taquicardia o ansiedad, el problema casi siempre viene de la cafeína y otros estimulantes de los pre-entrenos comerciales, no de la creatina en sí (que no es un estimulante). Tu protocolo debe separar ambos suplementos: creatina a dosis fija diaria, y cafeína (si la usas) en una dosis mucho más conservadora y ajustada a tu peso y tolerancia personal."
+    }
+  };
+
+  function lmSelect(tipo){
+    const d = lmDiagnosticos[tipo];
+    document.getElementById('lm-diagnosis-box').innerHTML =
+      '<h2>' + d.titulo + '</h2><p>' + d.texto + '</p>';
+    document.getElementById('step-1').classList.remove('active');
+    document.getElementById('step-2').classList.add('active');
+    document.getElementById('step-3').classList.remove('active');
+    window.lmTipoActual = tipo;
+  }
+
+  function lmBack(){
+    document.getElementById('step-2').classList.remove('active');
+    document.getElementById('step-3').classList.remove('active');
+    document.getElementById('step-1').classList.add('active');
+    document.getElementById('lm-result').classList.remove('show');
+    document.getElementById('lm-peso').value = '';
+  }
+
+  function lmCalcular(){
+    const peso = parseFloat(document.getElementById('lm-peso').value);
+    const resultBox = document.getElementById('lm-result');
+    if(!peso || peso < 30 || peso > 200){
+      resultBox.innerHTML = 'Introduce un peso válido (entre 30 y 200 kg).';
+      resultBox.classList.add('show');
+      return;
+    }
+    // Fórmula estándar: ~0.03 g/kg/día de creatina monohidrato en fase de mantenimiento
+    const dosisMantenimiento = (peso * 0.03).toFixed(1);
+    const dosisCargaMin = (peso * 0.08).toFixed(1);
+    const dosisCargaMax = (peso * 0.10).toFixed(1);
+
+    let notaExtra = '';
+    if(window.lmTipoActual === 'hincho'){
+      notaExtra = ' Como notas retención de líquido, te recomendamos saltar la fase de carga y empezar directamente con la dosis de mantenimiento.';
+    } else if(window.lmTipoActual === 'ansiedad'){
+      notaExtra = ' Recuerda: esta dosis es solo de creatina, que no es un estimulante. Revisa aparte la cafeína de tus pre-entrenos si notas nervios.';
+    }
+
+    resultBox.innerHTML =
+      'Para tu peso (' + peso + ' kg):<br>' +
+      '<strong>Dosis de mantenimiento diaria: ' + dosisMantenimiento + ' g</strong><br>' +
+      'Fase de carga opcional (primeros 5-7 días): ' + dosisCargaMin + '–' + dosisCargaMax + ' g/día, repartidos en varias tomas.' +
+      notaExtra;
+    resultBox.classList.add('show');
+
+    // mostrar pricing tras calcular
+    setTimeout(() => {
+      document.getElementById('step-3').classList.add('active');
+      document.getElementById('step-3').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 400);
+  }
+</script>
+</body>
+</html>
