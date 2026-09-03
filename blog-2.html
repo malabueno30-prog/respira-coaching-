@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recursos y Blog | Respira Coaching</title>
   
-  <!-- Tipografía Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Script de Gumroad para la ventana emergente -->
   <script src="https://gumroad.com/js/gumroad.js"></script>
 
   <style>
@@ -198,7 +196,7 @@
       color: #ffffff;
     }
 
-    /* SECCIÓN ARTÍCULOS COMPLETOS */
+    /* SECCIÓN ARTÍCULOS ENLAZADOS */
     .articles-section {
       margin-top: 60px;
       border-top: 1px solid var(--border);
@@ -213,47 +211,50 @@
       text-align: center;
     }
 
-    .full-article {
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .article-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .full-article h4 {
-      font-size: 1.5rem;
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .article-card h4 {
+      font-size: 1.2rem;
       font-weight: 700;
-      color: var(--primary-dark);
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .article-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
       margin-bottom: 16px;
     }
 
-    .full-article h5 {
-      font-size: 1.15rem;
+    .article-link {
+      color: var(--primary);
       font-weight: 700;
-      color: var(--text);
-      margin: 20px 0 10px 0;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
 
-    .full-article p {
-      color: var(--text);
-      font-size: 1rem;
-      margin-bottom: 16px;
-      line-height: 1.7;
-    }
-
-    .full-article ul {
-      margin: 0 0 16px 20px;
-      color: var(--text);
-    }
-
-    .full-article ul li {
-      margin-bottom: 6px;
-    }
-
-    .full-article p:last-child {
-      margin-bottom: 0;
+    .article-link:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -283,10 +284,8 @@
       <p>Aprende a calmar tu sistema nervioso y optimizar tu rendimiento mental y físico.</p>
     </div>
 
-    <!-- SECCIÓN RECURSOS DESCARGABLES -->
     <div class="resources-grid">
 
-      <!-- OPCIÓN 1: GUÍA GRATUITA -->
       <div class="card card-featured">
         <div>
           <span class="badge badge-free">Recurso Gratuito</span>
@@ -306,7 +305,6 @@
         </a>
       </div>
 
-      <!-- OPCIÓN 2: GUÍA COMPLETA DE PAGO -->
       <div class="card">
         <div>
           <span class="badge badge-pro">Protocolo Completo</span>
@@ -328,100 +326,84 @@
 
     </div>
 
-    <!-- SECCIÓN DE ARTÍCULOS COMPLETOS -->
     <section class="articles-section">
       <h3>Artículos del Blog</h3>
 
-      <!-- ARTÍCULO 1: HEAVY DUTY MIKE MENTZER -->
-      <article class="full-article">
-        <h4>El Método Heavy Duty de Mike Mentzer: Alta Intensidad y Bajo Volumen</h4>
-        <p>El método <strong>Heavy Duty</strong>, desarrollado por Mike Mentzer en la década de los 70 y 80, representa un cambio radical frente a los enfoques de entrenamiento tradicionales de alto volumen. Frente a la creencia popular de que "más es mejor", Mentzer aplicó principios de lógica y fisiología humana para demostrar que la variable determinante para desencadenar el crecimiento muscular es la intensidad del esfuerzo, no la duración de la sesión.</p>
-        
-        <h5>Fundamentos Fisiológicos del Entrenamiento de Alta Intensidad</h5>
-        <p>Para estimular la hipertrofia, el cuerpo necesita experimentar un estrés biomecánico superior a su umbral habitual. Una vez que se alcanza el fallo muscular momentáneo en una serie bien ejecutada, el organismo recibe la señal bioquímica necesaria para activar la síntesis proteica. Realizar series adicionales del mismo ejercicio no añade mayor estímulo de crecimiento; por el contrario, consume las reservas de energía celular y prolonga innecesariamente el tiempo de recuperación del sistema nervioso central.</p>
+      <div class="articles-grid">
 
-        <h5>Principios Clave para su Aplicación</h5>
-        <ul>
-          <li><strong>Intensidad Máxima:</strong> Llevar cada serie de trabajo hasta el punto en que resulte imposible completar otra repetición con técnica estricta.</li>
-          <li><strong>Bajo Volumen:</strong> Reducir el entrenamiento a 1 o 2 series efectivas por grupo muscular, eliminando las series de relleno.</li>
-          <li><strong>Cadencia Controlada:</strong> Mantener una fase concéntrica explosiva pero bajo control (2 a 3 segundos) y una fase excéntrica pausada (4 segundos) para eliminar el impulso inercial.</li>
-          <li><strong>Descanso Prolongado:</strong> Dejar entre 48 y 96 horas de recuperación entre sesiones, adaptando la frecuencia según la capacidad individual de supercompensación.</li>
-        </ul>
+        <article class="article-card">
+          <div>
+            <h4>El Método Heavy Duty de Mike Mentzer</h4>
+            <p>Entrenamiento de alta intensidad y bajo volumen para maximizar el estímulo muscular sin sobreentrenar.</p>
+          </div>
+          <a href="heavy-duty-mike-mentzer.html" class="article-link">Leer artículo completo &rarr;</a>
+        </article>
 
-        <p>En el contexto del alto rendimiento y la salud integral, el Heavy Duty enseña una lección fundamental: la eficiencia del estímulo prima sobre la acumulación de fatiga. Gestionar el volumen de entrenamiento de forma estratégica permite maximizar las ganancias musculares minimizando el desgaste articular y metabólico.</p>
-      </article>
+        <article class="article-card">
+          <div>
+            <h4>Filosofía Marcial y Control del Sistema Nervioso</h4>
+            <p>Lecciones de judo y templanza aprendidas junto al maestro Roberto Berlanga.</p>
+          </div>
+          <a href="sensei-tatami-voluntad-grandes-fundadores.html" class="article-link">Leer artículo completo &rarr;</a>
+        </article>
 
-      <!-- ARTÍCULO 2: CREATINA -->
-      <article class="full-article">
-        <h4>Creatina: Efectos, Evidencia Científica y Beneficios Reales</h4>
-        <p>La creatina monohidrato es el suplemento nutricional con mayor respaldo científico disponible en la actualidad. Sintetizada de forma natural por el hígado, los riñones y el páncreas a partir de tres aminoácidos (arginina, glicina y metionina), también se obtiene a través del consumo de carnes rojas y pescados. Sin embargo, alcanzar las concentraciones óptimas para la mejora del rendimiento requiere de la suplementación exógena.</p>
+        <article class="article-card">
+          <div>
+            <h4>Creatina: Efectos y Beneficios Reales</h4>
+            <p>Descubre el impacto de la creatina en el rendimiento deportivo, la fuerza y la energía cerebral.</p>
+          </div>
+          <a href="creatina-efectos-beneficios-entreno.html" class="article-link">Leer artículo completo &rarr;</a>
+        </article>
 
-        <h5>Mecanismo de Acción Celular</h5>
-        <p>Dentro del tejido muscular, la creatina se une a un grupo fosfato para formar fosfocreatina (PCr). Durante ejercicios de máxima intensidad y corta duración —como el levantamiento de pesas o los esprints—, la fosfocreatina dona su grupo fosfato para regenerar el adenosín trifosfato (ATP), la moneda energética primaria de las células. Al saturar los depósitos de fosfocreatina, se retrasa la aparición de la fatiga metabólica y se mantiene la producción de fuerza durante más tiempo.</p>
+        <article class="article-card">
+          <div>
+            <h4>Higiene del Sueño y Descanso Profundo</h4>
+            <p>Optimiza tu ritmo circadiano, reduce el cortisol y recupera tu energía de forma natural.</p>
+          </div>
+          <a href="higiene-del-sueno.html" class="article-link">Leer artículo completo &rarr;</a>
+        </article>
 
-        <h5>Beneficios Demostrados</h5>
-        <ul>
-          <li><strong>Aumento de Fuerza y Potencia:</strong> Incrementa la capacidad muscular para soportar cargas elevadas en rangos de hipertrofia y fuerza máxima.</li>
-          <li><strong>Volumización Celular:</strong> Atrae agua al interior de las células musculares, mejorando el estado de hidratación e induciendo señales anabólicas de síntesis proteica.</li>
-          <li><strong>Soporte Cognitivo:</strong> El cerebro consumirá una cantidad sustancial de ATP durante tareas de alta exigencia mental. La suplementación con creatina ayuda a mitigar la fatiga cognitiva en situaciones de estrés o falta de sueño.</li>
-        </ul>
+        <article class="article-card">
+          <div>
+            <h4>Gestión del Estrés Diario</h4>
+            <p>Herramientas prácticas de respiración y regulación rápida para momentos de sobrecarga.</p>
+          </div>
+          <a href="gestion-del-estres-diario.html" class="article-link">Leer artículo completo &rarr;</a>
+        </article>
 
-        <h5>Dosis y Protocolo de Uso</h5>
-        <p>La estrategia más simple y extendida es la ingesta de una dosis diaria constante de <strong>3 a 5 gramos de creatina monohidrato</strong> (o aprox. 0.07 g por kg de peso corporal). No es estrictamente necesario realizar fases de carga de 20 gramos al día, ya que la toma diaria continuada logra saturar los depósitos musculares de forma paulatina en un periodo de tres a cuatro semanas sin generar molestias gastrointestinales.</p>
-      </article>
+        <article class="article-card">
+          <div>
+            <h4>Grounding en la Playa y sus Beneficios</h4>
+            <p>Conecta con la naturaleza para equilibrar el sistema nervioso y reducir el estado de alerta.</p>
+          </div>
+          <a href="grounding-playa-tendencia-beneficios.html" class="article-link">Leer artículo completo &rarr;</a>
+        </article>
 
-      <!-- ARTÍCULO 3: SENSEI Y JUDO -->
-      <article class="full-article">
-        <h4>Filosofía Marcial y Control del Sistema Nervioso: Lecciones del Judo</h4>
-        <p>El judo es mucho más que un deporte de combate; es una disciplina biomecánica y mental diseñada para maximizar la eficiencia del cuerpo mediante la calma interna. Haber tenido el privilegio de formarme bajo la instrucción de un maestro de la entidad de Roberto Berlanga —quien logró un cuarto puesto olímpico compitiendo al más alto nivel mundial en Japón— me permitió comprender de primera mano cómo el dominio del sistema nervioso determina el resultado bajo condiciones de máxima presión física y emocional.</p>
+        <article class="article-card">
+          <div>
+            <h4>Cómo Construir Hábitos que Duran</h4>
+            <p>Estrategias científicas para consolidar rutinas saludables de forma sostenible.</p>
+          </div>
+          <a href="construir-habitos-que-duran.html" class="article-link">Leer artículo completo &rarr;</a>
+        </article>
 
-        <h5>El Principio de "Ju" (Suavidad o Ceder)</h5>
-        <p>El término *Judo* se traduce literalmente como "el camino de la flexibilidad" o "la vía de la suavidad". El concepto clave no radica en oponer fuerza contra fuerza, sino en aceptar e integrar la energía del adversario para redirigirla. Cuando un atacante empuja, la respuesta biomecánica correcta no es tensar la musculatura en resistencia rígida, sino ceder el paso, desequilibrar al oponente y utilizar su propio impulso en su contra.</p>
+        <article class="article-card">
+          <div>
+            <h4>Beneficios del Tai Chi y Qi Gong</h4>
+            <p>Movimiento consciente y respiración para mantener la vitalidad y el equilibrio a cualquier edad.</p>
+          </div>
+          <a href="taichi-qigong-beneficios-vejez.html" class="article-link">Leer artículo completo &rarr;</a>
+        </article>
 
-        <h5>Traslación a la Regulación del Estrés Diario</h5>
-        <p>Este principio marcial es directamente aplicable a los estados de ansiedad y sobrecarga mental. Cuando una persona intenta combatir un ataque de pánico o un pico de estrés mediante la resistencia interna o la lucha contra sus propios síntomas físicos, incrementa la activación de la rama simpática del sistema nervioso. La lección del tatami es clara:</p>
-        <ul>
-          <li><strong>Aceptar el estímulo:</strong> Reconocer la aceleración cardíaca o la tensión sin generar una respuesta de pánico secundaria.</li>
-          <li><strong>Anclar la postura:</strong> Mantener un centro de gravedad bajo y estable mediante una alineación corporal adecuada.</li>
-          <li><strong>Regular la exhalación:</strong> Prolongar la salida del aire para estimular el nervio vago y restaurar el tono parasimpático.</li>
-        </ul>
-        <p>Dominar la respiración bajo el estrés del combate permite mantener la claridad táctica cuando el cuerpo está al límite del agotamiento.</p>
-      </article>
+        <article class="article-card">
+          <div>
+            <h4>Técnica de Respiración para la Ansiedad</h4>
+            <p>Protocolo de rescate rápido de 3 minutos para frenar picos de estrés en tiempo real.</p>
+          </div>
+          <a href="tecnica-respiracion-ansiedad-3-minutos.html" class="article-link">Leer artículo completo &rarr;</a>
+        </article>
 
-      <!-- ARTÍCULO 4: HIGIENE DEL SUEÑO -->
-      <article class="full-article">
-        <h4>Higiene del Sueño y Descanso Profundo: La Base de la Recuperación</h4>
-        <p>El sueño de calidad constituye el proceso de restauración metabólica, neuronal y hormonal más importante del cuerpo humano. Durante las fases de sueño profundo y fase REM, el organismo consolida la memoria, repara las microlesiones musculares, equilibra la producción de hormonas reguladoras del apetito (leptina y ghrelina) y elimina desechos metabólicos cerebrales a través del sistema glinfático.</p>
-
-        <h5>El Impacto del Sueño en el Sistema Nervioso</h5>
-        <p>La privación crónica de descanso genera un estado de inflamación de bajo grado y mantiene elevados los niveles de cortisol por la noche. Esto altera el equilibrio del sistema nervioso vegetativo, haciendo que la persona se sienta hiperreactiva al estrés diario y reduciendo la variabilidad de la frecuencia cardíaca (HRV), un indicador clave de salud y capacidad de adaptación.</p>
-
-        <h5>Protocolo para Optimizar la Higiene del Sueño</h5>
-        <ul>
-          <li><strong>Sincronización Circadiana:</strong> Exponerse a la luz solar natural durante los primeros 30 minutos tras despertarse para suprimir la melatonina y activar el ritmo biológico natural.</li>
-          <li><strong>Bloqueo de Luz Azul:</strong> Evitar la exposición a pantallas incandescentes (móviles, ordenadores, televisores) al menos 90 minutos antes de dormir, utilizando iluminación cálida e tenue en el hogar.</li>
-          <li><strong>Acondicionamiento Térmico:</strong> Mantener el dormitorio a una temperatura fresca (entre 18°C y 20°C). El cuerpo necesita descender su temperatura corporal central para iniciar las fases profundas del sueño.</li>
-          <li><strong>Cese de Estimulantes:</strong> Evitar el consumo de cafeína y otros estimulantes a partir de las 14:00 horas, dada la vida media de estas sustancias en el organismo.</li>
-        </ul>
-      </article>
-
-      <!-- ARTÍCULO 5: GROUNDING Y ESTRÉS -->
-      <article class="full-article">
-        <h4>Gestión del Estrés y Grounding: Conexión y Regulación Vagal</h4>
-        <p>En el entorno moderno, la sobreestimulación sensorial continua y el distanciamiento con los entornos naturales mantienen a muchas personas en un estado persistente de dominancia simpática. El *grounding* (o contacto físico directo con la superficie terrestre) y las prácticas de inmersión en la naturaleza representan herramientas biológicas para restablecer el equilibrio homeostático del cuerpo.</p>
-
-        <h5>Mecanismos Fisiológicos del Grounding</h5>
-        <p>La superficie terrestre posee una carga eléctrica negativa constante rica en electrones libres. El contacto directo de la piel descubierta (por ejemplo, al caminar descalzo sobre hierba, tierra o arena) permite la transferencia de estos electrones hacia el organismo. Diversos estudios sugieren que este flujo ayuda a neutralizar los radicales libres en zonas inflamadas, reduciendo el estrés oxidativo y modulando la viscosidad sanguínea.</p>
-
-        <h5>Prácticas Directas para Reducir el Estrés</h5>
-        <ul>
-          <li><strong>Caminatas en Entornos Naturales:</strong> Realizar recorridos al aire libre sin dispositivos electrónicos, priorizando la observación activa del entorno mediante los cinco sentidos.</li>
-          <li><strong>Anclaje Sensorial (Técnica 5-4-3-2-1):</strong> Ante un pico de ansiedad en exteriores, identificar 5 objetos visibles, 4 texturas palpables, 3 sonidos del entorno, 2 olores y 1 sabor presente para reconectar con el momento presente.</li>
-          <li><strong>Pausas de Respiración al Aire Libre:</strong> Combinar el contacto físico con el suelo con ciclos de respiración diafragmática lentos (4 segundos de inhalación nasal y 6 segundos de exhalación).</li>
-        </ul>
-        <p>Integrar de forma regular estas pausas de desconexión biológica permite desactivar el estado de alerta sostenido, promoviendo una recuperación integral tanto a nivel físico como emocional.</p>
-      </article>
-
+      </div>
     </section>
 
   </main>
