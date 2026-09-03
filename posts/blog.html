@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog & Recurso Gratuito | Respira Coaching</title>
+  <title>Recursos y Blog | Respira Coaching</title>
   
-  <!-- Estilos base y tipografía -->
+  <!-- Tipografía Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Script de Gumroad para la ventana emergente -->
+  <!-- Script de Gumroad para ventana emergente (Overlay) -->
   <script src="https://gumroad.com/js/gumroad.js"></script>
 
   <style>
     :root {
       --primary: #0d9488;
-      --primary-hover: #0f766e;
+      --primary-dark: #0f766e;
+      --accent: #f59e0b;
       --bg: #f8fafc;
       --card-bg: #ffffff;
-      --text: #1e293b;
-      --text-light: #64748b;
+      --text: #0f172a;
+      --text-muted: #64748b;
       --border: #e2e8f0;
     }
 
@@ -48,7 +49,7 @@
     header h1 {
       font-size: 1.8rem;
       color: var(--primary);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     header nav {
@@ -56,7 +57,7 @@
     }
 
     header nav a {
-      color: var(--text-light);
+      color: var(--text-muted);
       text-decoration: none;
       margin: 0 12px;
       font-weight: 600;
@@ -68,151 +69,207 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 960px;
       margin: 40px auto;
       padding: 0 20px;
     }
 
-    /* Seccion destacada de Gumroad */
-    .hero-download {
-      background: linear-gradient(135deg, #0d9488 0%, #115e59 100%);
-      color: white;
-      border-radius: 16px;
-      padding: 40px 30px;
+    .page-title {
       text-align: center;
-      box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.3);
-      margin-bottom: 50px;
+      margin-bottom: 36px;
     }
 
-    .hero-download h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-
-    .hero-download p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto 24px auto;
-    }
-
-    .btn-gumroad {
-      display: inline-block;
-      background-color: #ffffff;
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 14px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn-gumroad:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    }
-
-    /* Seccion de Blog */
-    .blog-section h3 {
-      font-size: 1.5rem;
-      margin-bottom: 24px;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 8px;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .blog-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: transform 0.2s;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .blog-card h4 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+    .page-title h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
       color: var(--text);
     }
 
-    .blog-card p {
-      color: var(--text-light);
-      font-size: 0.95rem;
+    .page-title p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
+
+    /* Grilla de Recursos */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      position: relative;
+    }
+
+    .card-featured {
+      border: 2px solid var(--primary);
+      box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.15);
+    }
+
+    .badge {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
       margin-bottom: 16px;
     }
 
-    .blog-card a {
+    .badge-free {
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .badge-pro {
+      background-color: #fef3c7;
+      color: #b45309;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .card ul li {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+    }
+
+    .card ul li::before {
+      content: "✓";
       color: var(--primary);
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: #ffffff;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      color: var(--text-light);
+      color: var(--text-muted);
       font-size: 0.9rem;
       border-top: 1px solid var(--border);
-      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado de Navegacion -->
   <header>
     <h1>Respira Coaching</h1>
     <nav>
       <a href="index.html">Inicio</a>
-      <a href="blog.html" style="color: var(--primary);">Blog</a>
+      <a href="blog.html" style="color: var(--primary);">Blog & Guías</a>
     </nav>
   </header>
 
   <main class="container">
 
-    <!-- BANNER PRINCIPAL: DESCARGA GRATUITA GUMROAD -->
-    <section class="hero-download">
-      <h2>Descarga la Guía Gratuita</h2>
-      <p>Aprende las claves fundamentales sobre optimización, descanso y hábitos saludables para potenciar tu rendimiento diario.</p>
-      
-      <!-- Botón configurado con tu enlace directo de Gumroad -->
-      <a class="gumroad-button btn-gumroad" 
-         href="https://malabueno.gumroad.com/l/wxjhor" 
-         target="_blank">
-         Descargar guía gratis
-      </a>
-    </section>
+    <div class="page-title">
+      <h2>Herramientas y Recursos de Regulación</h2>
+      <p>Aprende a calmar tu sistema nervioso y optimizar tu rendimiento mental y físico.</p>
+    </div>
 
-    <!-- SECCIÓN DE ARTÍCULOS DEL BLOG -->
-    <section class="blog-section">
-      <h3>Últimos Artículos</h3>
-      
-      <div class="blog-grid">
-        <article class="blog-card">
-          <h4>Beneficios de la Creatina en la Rendimiento</h4>
-          <p>Descubre cómo la creatina ayuda a optimizar la energía celular y mejorar el rendimiento deportivo y cognitivo.</p>
-          <a href="#">Leer artículo completo &rarr;</a>
-        </article>
+    <div class="resources-grid">
 
-        <article class="blog-card">
-          <h4>Higiene del Sueño y Descanso</h4>
-          <p>Estrategias clave para mejorar tu calidad de descanso nocturno y optimizar la recuperación física y mental.</p>
-          <a href="#">Leer artículo completo &rarr;</a>
-        </article>
+      <!-- TARJETA 1: GUÍA GRATUITA -->
+      <div class="card card-featured">
+        <div>
+          <span class="badge badge-free">Recurso Gratuito</span>
+          <h3>3 Técnicas para Calmar la Ansiedad</h3>
+          <p>Activa el freno de tu sistema nervioso en menos de 5 minutos mediante la respiración consciente.</p>
+          <ul>
+            <li>Suspiro Fisiológico (rescate en 30 seg)</li>
+            <li>Técnica 4-7-8 (picos de ansiedad)</li>
+            <li>Box Breathing (foco y concentración)</li>
+          </ul>
+        </div>
+        
+        <a class="gumroad-button btn btn-primary" 
+           href="https://malabueno.gumroad.com/l/wxjhor" 
+           target="_blank">
+           Descargar guía gratis
+        </a>
       </div>
-    </section>
+
+      <!-- TARJETA 2: GUÍA COMPLETA (DE PAGO - 19€) -->
+      <div class="card">
+        <div>
+          <span class="badge badge-pro">Protocolo Completo</span>
+          <h3>Respira sin Ansiedad (19 €)</h3>
+          <p>El sistema integral paso a paso para erradicar la ansiedad recurrente y tomar el control total de tu cuerpo.</p>
+          <ul>
+            <li>Plan de entrenamiento de 14 días</li>
+            <li>Protocolo Rescate de 3 minutos</li>
+            <li>6 vídeos guiados con temporizador visual</li>
+          </ul>
+        </div>
+        
+        <!-- Sustituye el enlace por el link exacto de tu producto de 19€ de Gumroad -->
+        <a class="gumroad-button btn btn-outline" 
+           href="https://malabueno.gumroad.com/l/wxjhor" 
+           target="_blank">
+           Consigue la guía completa
+        </a>
+      </div>
+
+    </div>
 
   </main>
 
