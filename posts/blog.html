@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recurso Gratuito | Respira Coaching</title>
+  <title>Recursos y Guías | Respira Coaching</title>
   
   <!-- Tipografía Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Script de Gumroad para ventana emergente -->
+  <!-- Script de Gumroad para la ventana emergente -->
   <script src="https://gumroad.com/js/gumroad.js"></script>
 
   <style>
@@ -68,90 +68,134 @@
     }
 
     .container {
-      max-width: 680px;
-      margin: 50px auto;
+      max-width: 960px;
+      margin: 40px auto;
       padding: 0 20px;
     }
 
-    .card-download {
-      background: var(--card-bg);
-      border: 2px solid var(--primary);
-      border-radius: 20px;
-      padding: 40px 30px;
+    .page-title {
       text-align: center;
-      box-shadow: 0 10px 30px -5px rgba(13, 148, 136, 0.15);
+      margin-bottom: 36px;
     }
 
-    .badge-free {
-      display: inline-block;
-      background-color: #e0f2fe;
-      color: #0369a1;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .card-download h2 {
-      font-size: 2rem;
+    .page-title h2 {
+      font-size: 2.2rem;
       font-weight: 800;
-      margin-bottom: 12px;
       color: var(--text);
     }
 
-    .card-download p {
+    .page-title p {
       color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 24px;
+      font-size: 1.1rem;
+      margin-top: 8px;
     }
 
-    .features-list {
-      text-align: left;
-      background-color: var(--bg);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      list-style: none;
+    /* Grilla de Recursos */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
     }
 
-    .features-list li {
-      margin-bottom: 10px;
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .card-featured {
+      border: 2px solid var(--primary);
+      box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.15);
+    }
+
+    .badge {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .badge-free {
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .badge-pro {
+      background-color: #fef3c7;
+      color: #b45309;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--text-muted);
       font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .card ul li {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
       display: flex;
       align-items: center;
     }
 
-    .features-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    .features-list li::before {
+    .card ul li::before {
       content: "✓";
       color: var(--primary);
       font-weight: bold;
-      margin-right: 10px;
-      font-size: 1.1rem;
+      margin-right: 8px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
     }
 
     .btn-primary {
-      display: inline-block;
-      width: 100%;
       background-color: var(--primary);
       color: #ffffff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 16px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background-color 0.2s, transform 0.2s;
-      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
     }
 
     .btn-primary:hover {
       background-color: var(--primary-dark);
-      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: #ffffff;
     }
 
     footer {
@@ -160,7 +204,6 @@
       color: var(--text-muted);
       font-size: 0.9rem;
       border-top: 1px solid var(--border);
-      margin-top: 60px;
     }
   </style>
 </head>
@@ -170,29 +213,61 @@
     <h1>Respira Coaching</h1>
     <nav>
       <a href="index.html">Inicio</a>
-      <a href="blog.html" style="color: var(--primary);">Recurso Gratuito</a>
+      <a href="blog.html" style="color: var(--primary);">Recursos y Guías</a>
     </nav>
   </header>
 
   <main class="container">
 
-    <div class="card-download">
-      <span class="badge-free">Descarga Gratuita</span>
-      <h2>3 Técnicas para Calmar la Ansiedad</h2>
-      <p>Activa el freno de tu sistema nervioso en menos de 5 minutos mediante la respiración consciente.</p>
+    <div class="page-title">
+      <h2>Herramientas de Regulación Ansiosa</h2>
+      <p>Selecciona la opción que mejor se adapte a tus necesidades actuales.</p>
+    </div>
 
-      <ul class="features-list">
-        <li><strong>Suspiro Fisiológico:</strong> Rescate rápido en 30 segundos.</li>
-        <li><strong>Técnica 4-7-8:</strong> Para taquicardias y picos de ansiedad.</li>
-        <li><strong>Box Breathing:</strong> Recupera el foco antes de una reunión o examen.</li>
-      </ul>
+    <div class="resources-grid">
 
-      <!-- Enlace único a tu producto en Gumroad -->
-      <a class="gumroad-button btn-primary" 
-         href="https://malabueno.gumroad.com/l/wxjhor" 
-         target="_blank">
-         Descargar guía gratis
-      </a>
+      <!-- OPCIÓN 1: GUÍA GRATUITA -->
+      <div class="card card-featured">
+        <div>
+          <span class="badge badge-free">Recurso Gratuito</span>
+          <h3>3 Técnicas para Calmar la Ansiedad</h3>
+          <p>Activa el freno de tu sistema nervioso en menos de 5 minutos mediante la respiración consciente.</p>
+          <ul>
+            <li>Suspiro Fisiológico (rescate en 30 seg)</li>
+            <li>Técnica 4-7-8 (picos de ansiedad)</li>
+            <li>Box Breathing (foco y concentración)</li>
+          </ul>
+        </div>
+        
+        <!-- Enlace exclusivo a tu guía gratuita (0 €) -->
+        <a class="gumroad-button btn btn-primary" 
+           href="https://malabueno.gumroad.com/l/onlhvz" 
+           target="_blank">
+           Descargar gratis (0 €)
+        </a>
+      </div>
+
+      <!-- OPCIÓN 2: GUÍA COMPLETA DE PAGO (19 €) -->
+      <div class="card">
+        <div>
+          <span class="badge badge-pro">Protocolo Completo</span>
+          <h3>Respira sin Ansiedad (19 €)</h3>
+          <p>El sistema integral paso a paso para erradicar la ansiedad recurrente y tomar el control total de tu cuerpo.</p>
+          <ul>
+            <li>Plan de entrenamiento de 14 días</li>
+            <li>Protocolo Rescate de 3 minutos</li>
+            <li>6 vídeos guiados con temporizador visual</li>
+          </ul>
+        </div>
+        
+        <!-- Enlace a tu producto de pago de Gumroad (19 €) -->
+        <a class="gumroad-button btn btn-outline" 
+           href="https://malabueno.gumroad.com/l/wxjhor" 
+           target="_blank">
+           Consigue la guía completa (19 €)
+        </a>
+      </div>
+
     </div>
 
   </main>
