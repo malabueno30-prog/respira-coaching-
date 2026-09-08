@@ -1,438 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recursos y Blog | Respira Coaching</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
-  <script src="https://gumroad.com/js/gumroad.js"></script>
-
-  <style>
-    :root {
-      --primary: #0d9488;
-      --primary-dark: #0f766e;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding-bottom: 60px;
-    }
-
-    header {
-      background-color: var(--card-bg);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 1.8rem;
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    header nav {
-      margin-top: 10px;
-    }
-
-    header nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    header nav a:hover {
-      color: var(--primary);
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .page-title {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-
-    .page-title h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    .page-title p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-top: 8px;
-    }
-
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-bottom: 60px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    }
-
-    .card-featured {
-      border: 2px solid var(--primary);
-      box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.15);
-    }
-
-    .badge {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .badge-free {
-      background-color: #e0f2fe;
-      color: #0369a1;
-    }
-
-    .badge-pro {
-      background-color: #fef3c7;
-      color: #b45309;
-    }
-
-    .card h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-
-    .card ul {
-      list-style: none;
-      margin-bottom: 28px;
-    }
-
-    .card ul li {
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-    }
-
-    .card ul li::before {
-      content: "✓";
-      color: var(--primary);
-      font-weight: bold;
-      margin-right: 8px;
-    }
-
-    .btn {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 14px 20px;
-      border-radius: 50px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary {
-      background-color: var(--primary);
-      color: #ffffff;
-    }
-
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-
-    .btn-outline:hover {
-      background-color: var(--primary);
-      color: #ffffff;
-    }
-
-    .articles-section {
-      margin-top: 60px;
-      border-top: 1px solid var(--border);
-      padding-top: 40px;
-    }
-
-    .articles-section h3 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 32px;
-      color: var(--text);
-      text-align: center;
-    }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .article-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .article-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    .article-card h4 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-
-    .article-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 16px;
-    }
-
-    .article-link {
-      color: var(--primary);
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    .article-link:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border);
-      margin-top: 60px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recursos y Blog · Respira Coaching</title>
+<meta name="description" content="Herramientas de regulación del sistema nervioso y artículos prácticos sobre hábitos, estrés, sueño y artes marciales.">
+<link rel="canonical" href="https://malabueno30-prog.github.io/respira-coaching-/blog.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://gumroad.com/js/gumroad.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6882361228091192" crossorigin="anonymous"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6882361228091192",
+    enable_page_level_ads: true
+  });
+</script>
+<style>
+  .articles-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:var(--space-3);
+  }
+  .article-card{
+    background:var(--white);
+    padding:var(--space-3);
+    border-radius:6px;
+    border:1px solid rgba(43,58,58,.08);
+    display:flex;flex-direction:column;justify-content:space-between;
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .article-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(43,58,58,.08);}
+  .article-card h3{font-size:1.15rem;margin-bottom:.5rem;}
+  .article-card p{font-size:.9rem;opacity:.8;margin-bottom:var(--space-2);}
+  .article-card .article-link{
+    font-family:var(--font-mono);font-size:.82rem;font-weight:600;
+    color:var(--clay);text-decoration:none;
+  }
+  .article-card .article-link:hover{text-decoration:underline;}
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Respira Coaching</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="blog.html" style="color: var(--primary);">Recursos y Blog</a>
-    </nav>
-  </header>
+<header>
+  <nav class="nav">
+    <a href="index.html" class="logo">respira<span>.</span></a>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html#servicios">Cómo funciona</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">Sobre el proyecto</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main class="container">
+<div class="wrap article-head">
+  <span class="eyebrow">Recursos y blog</span>
+  <h1>Herramientas de regulación y artículos</h1>
+  <p class="article-meta">Aprende a calmar tu sistema nervioso y optimizar tu rendimiento mental y físico.</p>
+</div>
 
-    <div class="page-title">
-      <h2>Herramientas de Regulación y Artículos</h2>
-      <p>Aprende a calmar tu sistema nervioso y optimizar tu rendimiento mental y físico.</p>
-    </div>
+<section class="section-alt">
+  <div class="wrap">
+    <div class="grid-3" style="grid-template-columns:repeat(2,1fr);">
 
-    <div class="resources-grid">
-
-      <div class="card card-featured">
-        <div>
-          <span class="badge badge-free">Recurso Gratuito</span>
-          <h3>3 Técnicas para Calmar la Ansiedad</h3>
-          <p>Activa el freno de tu sistema nervioso en menos de 5 minutos mediante la respiración consciente.</p>
-          <ul>
-            <li>Suspiro Fisiológico (rescate en 30 seg)</li>
-            <li>Técnica 4-7-8 (picos de ansiedad)</li>
-            <li>Box Breathing (foco y concentración)</li>
-          </ul>
-        </div>
-        
-        <a class="gumroad-button btn btn-primary" 
-           href="https://malabueno.gumroad.com/l/onlhvz" 
-           target="_blank">
-           Descargar gratis (0 €)
-        </a>
+      <div class="card">
+        <span class="eyebrow">Recurso gratuito</span>
+        <h3>3 Técnicas para Calmar la Ansiedad</h3>
+        <p>Activa el freno de tu sistema nervioso en menos de 5 minutos mediante la respiración consciente.</p>
+        <ul style="margin:0 0 var(--space-3) 1.2rem;font-size:.9rem;opacity:.85;">
+          <li>Suspiro Fisiológico (rescate en 30 seg)</li>
+          <li>Técnica 4-7-8 (picos de ansiedad)</li>
+          <li>Box Breathing (foco y concentración)</li>
+        </ul>
+        <a class="gumroad-button btn btn-solid" href="https://malabueno.gumroad.com/l/onlhvz" target="_blank">Descargar gratis (0 €)</a>
       </div>
 
       <div class="card">
-        <div>
-          <span class="badge badge-pro">Protocolo Completo</span>
-          <h3>Respira sin Ansiedad (19 €)</h3>
-          <p>El sistema integral paso a paso para erradicar la ansiedad recurrente y tomar el control total de tu cuerpo.</p>
-          <ul>
-            <li>Plan de entrenamiento de 14 días</li>
-            <li>Protocolo Rescate de 3 minutos</li>
-            <li>6 vídeos guiados con temporizador visual</li>
-          </ul>
-        </div>
-        
-        <a class="gumroad-button btn btn-outline" 
-           href="https://malabueno.gumroad.com/l/wxjhor" 
-           target="_blank">
-           Consigue la guía completa (19 €)
-        </a>
+        <span class="eyebrow">Protocolo completo</span>
+        <h3>Respira sin Ansiedad (19 €)</h3>
+        <p>El sistema integral paso a paso para erradicar la ansiedad recurrente y tomar el control total de tu cuerpo.</p>
+        <ul style="margin:0 0 var(--space-3) 1.2rem;font-size:.9rem;opacity:.85;">
+          <li>Plan de entrenamiento de 14 días</li>
+          <li>Protocolo Rescate de 3 minutos</li>
+          <li>6 vídeos guiados con temporizador visual</li>
+        </ul>
+        <a class="gumroad-button btn" href="https://malabueno.gumroad.com/l/wxjhor" target="_blank">Consigue la guía completa (19 €)</a>
       </div>
 
     </div>
+  </div>
+</section>
 
-    <section class="articles-section">
-      <h3>Artículos del Blog</h3>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artículos del blog</span>
+      <h2>Todos los artículos</h2>
+    </div>
 
-      <div class="articles-grid">
+    <div class="articles-grid">
 
-        <article class="article-card">
-          <div>
-            <h4>El Significado del Yin y Yang en las Artes Marciales</h4>
-            <p>Qué representa realmente el símbolo del Yin y Yang y cómo se aplica en el combate, el Tai Chi y el resto de artes marciales.</p>
-          </div>
-          <a href="posts/yin-yang-significado-artes-marciales.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>El Significado del Yin y Yang en las Artes Marciales</h3>
+          <p>Qué representa realmente el símbolo del Yin y Yang y cómo se aplica en el combate, el Tai Chi y el resto de artes marciales.</p>
+        </div>
+        <a href="posts/yin-yang-significado-artes-marciales.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Senderismo, Barranquismo y Resistencia</h4>
-            <p>Lo que el aire libre le devuelve al cuerpo: por qué la resistencia es el hilo común entre todos los deportes.</p>
-          </div>
-          <a href="posts/senderismo-barranquismo-resistencia.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Senderismo, Barranquismo y Resistencia</h3>
+          <p>Lo que el aire libre le devuelve al cuerpo: por qué la resistencia es el hilo común entre todos los deportes.</p>
+        </div>
+        <a href="posts/senderismo-barranquismo-resistencia.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Bo y Catana: Dos Destrezas, Dos Filosofías de Combate</h4>
-            <p>El bastón de Okinawa y el sable de los samuráis: dos armas tradicionales, dos formas distintas de entender la disciplina y el control.</p>
-          </div>
-          <a href="posts/bo-catana-destrezas-armas-tradicionales.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Bo y Catana: Dos Destrezas, Dos Filosofías de Combate</h3>
+          <p>El bastón de Okinawa y el sable de los samuráis: dos armas tradicionales, dos formas distintas de entender la disciplina y el control.</p>
+        </div>
+        <a href="posts/bo-catana-destrezas-armas-tradicionales.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>El Método Heavy Duty de Mike Mentzer</h4>
-            <p>Entrenamiento de alta intensidad y bajo volumen para maximizar el estímulo muscular sin sobreentrenar.</p>
-          </div>
-          <a href="posts/heavy-duty-mike-mentzer.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>El Método Heavy Duty de Mike Mentzer</h3>
+          <p>Entrenamiento de alta intensidad y bajo volumen para maximizar el estímulo muscular sin sobreentrenar.</p>
+        </div>
+        <a href="posts/heavy-duty-mike-mentzer.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Quién es un Sensei: el Tatami y los Grandes Fundadores</h4>
-            <p>Qué representa realmente la figura del sensei, y quiénes fueron Jigoro Kano, So Doshin y Bruce Lee.</p>
-          </div>
-          <a href="posts/sensei-tatami-voluntad-grandes-fundadores.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Quién es un Sensei: el Tatami y los Grandes Fundadores</h3>
+          <p>Qué representa realmente la figura del sensei, y quiénes fueron Jigoro Kano, So Doshin y Bruce Lee.</p>
+        </div>
+        <a href="posts/sensei-tatami-voluntad-grandes-fundadores.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Creatina: Efectos y Beneficios Reales</h4>
-            <p>Descubre el impacto de la creatina en el rendimiento deportivo, la fuerza y la energía cerebral.</p>
-          </div>
-          <a href="posts/creatina-efectos-beneficios-entreno.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Creatina: Efectos y Beneficios Reales</h3>
+          <p>Descubre el impacto de la creatina en el rendimiento deportivo, la fuerza y la energía cerebral.</p>
+        </div>
+        <a href="posts/creatina-efectos-beneficios-entreno.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Higiene del Sueño y Descanso Profundo</h4>
-            <p>Optimiza tu ritmo circadiano, reduce el cortisol y recupera tu energía de forma natural.</p>
-          </div>
-          <a href="posts/higiene-del-sueno.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Higiene del Sueño y Descanso Profundo</h3>
+          <p>Optimiza tu ritmo circadiano, reduce el cortisol y recupera tu energía de forma natural.</p>
+        </div>
+        <a href="posts/higiene-del-sueno.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Gestión del Estrés Diario</h4>
-            <p>Herramientas prácticas de respiración y regulación rápida para momentos de sobrecarga.</p>
-          </div>
-          <a href="posts/gestion-del-estres-diario.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Gestión del Estrés Diario</h3>
+          <p>Herramientas prácticas de respiración y regulación rápida para momentos de sobrecarga.</p>
+        </div>
+        <a href="posts/gestion-del-estres-diario.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Grounding en la Playa y sus Beneficios</h4>
-            <p>Conecta con la naturaleza para equilibrar el sistema nervioso y reducir el estado de alerta.</p>
-          </div>
-          <a href="posts/grounding-playa-tendencia-beneficios.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Grounding en la Playa y sus Beneficios</h3>
+          <p>Conecta con la naturaleza para equilibrar el sistema nervioso y reducir el estado de alerta.</p>
+        </div>
+        <a href="posts/grounding-playa-tendencia-beneficios.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Cómo Construir Hábitos que Duran</h4>
-            <p>Estrategias científicas para consolidar rutinas saludables de forma sostenible.</p>
-          </div>
-          <a href="posts/construir-habitos-que-duran.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Cómo Construir Hábitos que Duran</h3>
+          <p>Estrategias científicas para consolidar rutinas saludables de forma sostenible.</p>
+        </div>
+        <a href="posts/construir-habitos-que-duran.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Beneficios del Tai Chi y Qi Gong</h4>
-            <p>Movimiento consciente y respiración para mantener la vitalidad y el equilibrio a cualquier edad.</p>
-          </div>
-          <a href="posts/taichi-qigong-beneficios-vejez.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Beneficios del Tai Chi y Qi Gong</h3>
+          <p>Movimiento consciente y respiración para mantener la vitalidad y el equilibrio a cualquier edad.</p>
+        </div>
+        <a href="posts/taichi-qigong-beneficios-vejez.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-        <article class="article-card">
-          <div>
-            <h4>Técnica de Respiración para la Ansiedad</h4>
-            <p>Protocolo de rescate rápido de 3 minutos para frenar picos de estrés en tiempo real.</p>
-          </div>
-          <a href="posts/tecnica-respiracion-ansiedad-3-minutos.html" class="article-link">Leer artículo completo &rarr;</a>
-        </article>
+      <article class="article-card">
+        <div>
+          <h3>Técnica de Respiración para la Ansiedad</h3>
+          <p>Protocolo de rescate rápido de 3 minutos para frenar picos de estrés en tiempo real.</p>
+        </div>
+        <a href="posts/tecnica-respiracion-ansiedad-3-minutos.html" class="article-link">Leer artículo completo →</a>
+      </article>
 
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-  </main>
+<footer>
+  <div class="wrap footer-grid">
+    <p>© 2026 Respira Coaching. Todos los derechos reservados.</p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="about.html">Sobre el proyecto</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contacto</a>
+    </div>
+  </div>
+</footer>
 
-  <footer>
-    <p>&copy; Respira Coaching. Todos los derechos reservados.</p>
-  </footer>
-
+<script src="js/main.js"></script>
 </body>
 </html>
