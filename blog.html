@@ -101,105 +101,7 @@
       <h2>Todos los artículos</h2>
     </div>
 
-    <div class="articles-grid">
-
-      <article class="article-card">
-        <div>
-          <h3>El Significado del Yin y Yang en las Artes Marciales</h3>
-          <p>Qué representa realmente el símbolo del Yin y Yang y cómo se aplica en el combate, el Tai Chi y el resto de artes marciales.</p>
-        </div>
-        <a href="posts/yin-yang-significado-artes-marciales.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Senderismo, Barranquismo y Resistencia</h3>
-          <p>Lo que el aire libre le devuelve al cuerpo: por qué la resistencia es el hilo común entre todos los deportes.</p>
-        </div>
-        <a href="posts/senderismo-barranquismo-resistencia.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Bo y Catana: Dos Destrezas, Dos Filosofías de Combate</h3>
-          <p>El bastón de Okinawa y el sable de los samuráis: dos armas tradicionales, dos formas distintas de entender la disciplina y el control.</p>
-        </div>
-        <a href="posts/bo-catana-destrezas-armas-tradicionales.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>El Método Heavy Duty de Mike Mentzer</h3>
-          <p>Entrenamiento de alta intensidad y bajo volumen para maximizar el estímulo muscular sin sobreentrenar.</p>
-        </div>
-        <a href="posts/heavy-duty-mike-mentzer.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Quién es un Sensei: el Tatami y los Grandes Fundadores</h3>
-          <p>Qué representa realmente la figura del sensei, y quiénes fueron Jigoro Kano, So Doshin y Bruce Lee.</p>
-        </div>
-        <a href="posts/sensei-tatami-voluntad-grandes-fundadores.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Creatina: Efectos y Beneficios Reales</h3>
-          <p>Descubre el impacto de la creatina en el rendimiento deportivo, la fuerza y la energía cerebral.</p>
-        </div>
-        <a href="posts/creatina-efectos-beneficios-entreno.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Higiene del Sueño y Descanso Profundo</h3>
-          <p>Optimiza tu ritmo circadiano, reduce el cortisol y recupera tu energía de forma natural.</p>
-        </div>
-        <a href="posts/higiene-del-sueno.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Gestión del Estrés Diario</h3>
-          <p>Herramientas prácticas de respiración y regulación rápida para momentos de sobrecarga.</p>
-        </div>
-        <a href="posts/gestion-del-estres-diario.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Grounding en la Playa y sus Beneficios</h3>
-          <p>Conecta con la naturaleza para equilibrar el sistema nervioso y reducir el estado de alerta.</p>
-        </div>
-        <a href="posts/grounding-playa-tendencia-beneficios.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Cómo Construir Hábitos que Duran</h3>
-          <p>Estrategias científicas para consolidar rutinas saludables de forma sostenible.</p>
-        </div>
-        <a href="posts/construir-habitos-que-duran.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Beneficios del Tai Chi y Qi Gong</h3>
-          <p>Movimiento consciente y respiración para mantener la vitalidad y el equilibrio a cualquier edad.</p>
-        </div>
-        <a href="posts/taichi-qigong-beneficios-vejez.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-      <article class="article-card">
-        <div>
-          <h3>Técnica de Respiración para la Ansiedad</h3>
-          <p>Protocolo de rescate rápido de 3 minutos para frenar picos de estrés en tiempo real.</p>
-        </div>
-        <a href="posts/tecnica-respiracion-ansiedad-3-minutos.html" class="article-link">Leer artículo completo →</a>
-      </article>
-
-    </div>
+    <div class="articles-grid" id="all-posts"></div>
   </div>
 </section>
 
@@ -214,6 +116,9 @@
   </div>
 </footer>
 
+<script src="js/articles.js"></script>
+<script src="js/render-posts.js"></script>
+<script>renderArticleCards('all-posts');</script>
 <script src="js/main.js"></script>
 </body>
 </html>
