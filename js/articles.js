@@ -1,4 +1,13 @@
+// Lista de todos los artículos del blog.
+// IMPORTANTE: cuando publiques uno nuevo, añade su bloque AQUÍ ARRIBA DEL TODO
+// (el primero de la lista = el más reciente). No hace falta tocar index.html ni blog.html nunca más.
 window.SITE_ARTICLES = [
+  {
+    slug: "plan-diario-ganar-perder-masa-muscular.html",
+    date: "17 SEP 2026",
+    title: "El Plan Diario Importa Más que el Objetivo",
+    excerpt: "Por qué ganar o perder masa muscular se decide en las decisiones de cada día, combinando dieta y entrenamiento — no en la meta final."
+  },
   {
     slug: "sensei-tatami-voluntad-grandes-fundadores.html",
     date: "31 AGO 2026",
