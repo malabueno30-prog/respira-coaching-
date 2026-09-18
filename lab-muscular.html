@@ -55,6 +55,14 @@
     background:#fff; border-radius:12px; padding:20px; margin:20px 0;
     border-left:4px solid var(--clay, #B5654A);
   }
+  .lm-link-box {
+    background:#fff; border-radius:12px; padding:16px; margin:16px 0;
+    border-left:4px solid var(--sage,#7A8B6F);
+  }
+  .lm-link-box input {
+    width:100%; padding:10px; border-radius:8px; border:1px solid rgba(0,0,0,0.15);
+    font-size:13px; margin-top:8px; box-sizing:border-box;
+  }
   .lm-plans { display:flex; flex-direction:column; gap:16px; margin-top:24px; }
   .lm-plan {
     background:#fff; border-radius:12px; padding:20px; border:2px solid rgba(0,0,0,0.08);
@@ -127,6 +135,13 @@
         <div class="lm-result-box" id="resultDiagnostico"></div>
 
         <p style="font-family:'Inter',sans-serif; font-size:14px; color:var(--ink);">Esto es una orientación general, no sustituye asesoramiento profesional de nutrición o salud.</p>
+
+        <div class="lm-link-box">
+          <strong>📎 Guarda tu enlace personal</strong>
+          <p style="font-size:14px;">Este enlace lleva tu plan completo. Guárdalo (favoritos, notas, o mándatelo a ti mismo) antes de pagar — lo necesitarás para ver tu plan detallado.</p>
+          <input type="text" id="enlacePersonalInput" readonly onclick="this.select();">
+          <button onclick="copiarEnlace()" class="btn btn-solid" style="margin-top:8px; font-size:14px;">📋 Copiar enlace</button>
+        </div>
 
         <h3 style="font-family:'Fraunces',serif; margin-top:28px;">Tu plan a medida</h3>
         <div class="lm-plans">
@@ -228,6 +243,10 @@
       return;
     }
 
+    // Generamos su enlace personal con el plan codificado en la URL
+    const enlacePersonal = `gracias-lab-muscular.html?o=${objetivo}&f=${freno}&p=${peso}`;
+    document.getElementById('enlacePersonalInput').value = window.location.origin + window.location.pathname.replace('lab-muscular.html','') + enlacePersonal;
+
     let texto = '';
 
     if (objetivo === 'ganar') {
@@ -250,6 +269,13 @@
 
     box.innerHTML = texto;
     goToStep(4);
+  }
+
+  function copiarEnlace() {
+    const input = document.getElementById('enlacePersonalInput');
+    input.select();
+    navigator.clipboard.writeText(input.value);
+    alert('¡Enlace copiado! Guárdalo antes de pagar.');
   }
 </script>
 
