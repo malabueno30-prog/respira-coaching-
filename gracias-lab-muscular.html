@@ -73,17 +73,30 @@
 
 <script>
   const params = new URLSearchParams(window.location.search);
-  const objetivo = params.get('o');
-  const freno = params.get('f');
-  const peso = parseFloat(params.get('p'));
   const planTipo = params.get('plan') || 'basico';
   const content = document.getElementById('content');
+
+  // Prioridad 1: datos que viajaron solos con el pago (utm_content)
+  const utmContent = params.get('utm_content');
+  let objetivo, freno, peso;
+
+  if (utmContent) {
+    const partes = utmContent.split('-');
+    objetivo = partes[0];
+    freno = partes[1];
+    peso = parseFloat(partes[2]);
+  } else {
+    // Prioridad 2 (respaldo): enlace personal guardado manualmente
+    objetivo = params.get('o');
+    freno = params.get('f');
+    peso = parseFloat(params.get('p'));
+  }
 
   if (!objetivo || !peso) {
     content.innerHTML = `
       <div class="no-data">
         <h1 style="font-family:'Fraunces',serif;">¡Gracias por tu compra! 🎉</h1>
-        <p>Este enlace no tiene tus datos. Usa el enlace personal que guardaste al hacer el test (el que copiaste antes de pagar).</p>
+        <p>No hemos podido recuperar tus datos automáticamente. Usa el enlace personal que guardaste al hacer el test.</p>
         <p>Si lo perdiste, escríbenos a <strong>malabueno30@gmail.com</strong> con tu objetivo, freno y peso, y te lo regeneramos.</p>
       </div>`;
   } else {
