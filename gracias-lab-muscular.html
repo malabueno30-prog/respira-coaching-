@@ -39,13 +39,15 @@
   h1{color:#F3EDE0; font-size:30px; margin:12px 0 6px;}
   .sub{color:#E9C674; font-size:14px; margin-bottom:22px;}
   p{font-size:14.5px; line-height:1.65; margin:0 auto 26px; max-width:420px;}
+  .btn-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
   .btn{
-    display:inline-block; padding:16px 38px;
-    background:#E9C674; color:#0B1220; font-weight:bold;
-    text-decoration:none; border-radius:30px; font-size:16px;
+    display:inline-block; padding:16px 34px;
+    text-decoration:none; border-radius:30px; font-size:15px; font-weight:bold;
     transition:transform .15s ease;
   }
   .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:#E9C674; color:#0B1220;}
+  .btn-secondary{background:transparent; color:#E9C674; border:1.5px solid #E9C674;}
   .includes{
     display:flex; justify-content:center; gap:18px; margin-top:28px;
     flex-wrap:wrap; font-size:12px; color:#8A97A8;
@@ -67,7 +69,10 @@
     <h1>¡Ya es tuya!</h1>
     <div class="sub">Lab Muscular · Sistema Integral de Periodización</div>
     <p>Gracias por confiar en esta guía. Tienes en tus manos tu diagnóstico personalizado, tu calculadora de creatina y el Mapa de Periodización completo. Descárgala ahora y guárdala en un lugar donde puedas volver a ella cada semana.</p>
-    <a class="btn" href="descargas/lab-muscular-guia.pdf" download>⬇ Descargar mi guía (PDF)</a>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="descargas/lab-muscular-guia.pdf" download>⬇ Descargar mi guía (PDF)</a>
+      <a class="btn btn-secondary" href="index.html">Volver a la web</a>
+    </div>
     <div class="includes">
       <span>Diagnóstico</span>
       <span>Calculadora</span>
