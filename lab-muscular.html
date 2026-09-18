@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Muscular · Descubre tu freno y tu plan a medida · Respira Coaching</title>
+<meta name="description" content="Test gratis de 1 minuto: descubre qué está frenando tu progreso (ganar o perder peso) y consigue tu plan calculado a tu medida.">
+<link rel="canonical" href="https://malabueno30-prog.github.io/respira-coaching-/lab-muscular.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6882361228091192" crossorigin="anonymous"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6882361228091192",
+    enable_page_level_ads: true
+  });
+</script>
+
+<style>
+  .lm-wrap { max-width: 640px; margin: 0 auto; }
+  .lm-card {
+    background: var(--sand-light, #F3EDE0);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .lm-progress {
+    display:flex; gap:6px; margin-bottom:24px;
+  }
+  .lm-progress span {
+    height:4px; flex:1; border-radius:2px; background: rgba(0,0,0,0.1);
+  }
+  .lm-progress span.done { background: var(--sage, #7A8B6F); }
+  .lm-step { display:none; }
+  .lm-step.active { display:block; }
+  .lm-options { display:flex; flex-direction:column; gap:12px; margin-top:20px; }
+  .lm-opt-btn {
+    font-family:'Inter',sans-serif; font-size:16px; text-align:left;
+    padding:16px 18px; border-radius:12px; border:2px solid transparent;
+    background:#fff; cursor:pointer; transition:.15s;
+  }
+  .lm-opt-btn:hover { border-color: var(--sage, #7A8B6F); }
+  .lm-opt-btn.selected { border-color: var(--clay, #B5654A); background: var(--sand, #E8DCC8); }
+  .lm-input {
+    width:100%; padding:14px 16px; font-family:'Inter',sans-serif; font-size:16px;
+    border-radius:12px; border:2px solid rgba(0,0,0,0.1); margin-top:20px; box-sizing:border-box;
+  }
+  .lm-nav { display:flex; justify-content:space-between; margin-top:28px; }
+  .lm-back { background:none; border:none; font-family:'Inter',sans-serif; color:var(--sage-dark,#5C6B52); cursor:pointer; }
+  .lm-result-box {
+    background:#fff; border-radius:12px; padding:20px; margin:20px 0;
+    border-left:4px solid var(--clay, #B5654A);
+  }
+  .lm-plans { display:flex; flex-direction:column; gap:16px; margin-top:24px; }
+  .lm-plan {
+    background:#fff; border-radius:12px; padding:20px; border:2px solid rgba(0,0,0,0.08);
+  }
+  .lm-plan h3 { margin-top:0; font-family:'Fraunces',serif; }
+  .lm-plan .price { font-family:'IBM Plex Mono',monospace; font-size:22px; color:var(--clay,#B5654A); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="index.html" class="logo">respira<span>.</span></a>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html#servicios">Cómo funciona</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">Sobre el proyecto</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="section-alt">
+  <div class="wrap lm-wrap">
+
+    <span class="eyebrow" style="display:block;">Test gratis · 1 minuto</span>
+    <h1 style="margin-top:10px;">Descubre qué está frenando tu progreso</h1>
+    <p class="lead">Responde 3 preguntas rápidas y te decimos qué te está frenando ahora mismo, además de tu dosis y enfoque calculados para tu peso.</p>
+
+    <div class="lm-card">
+      <div class="lm-progress">
+        <span id="bar1" class="done"></span>
+        <span id="bar2"></span>
+        <span id="bar3"></span>
+        <span id="bar4"></span>
+      </div>
+
+      <!-- Paso 1: Objetivo -->
+      <div class="lm-step active" id="step1">
+        <h2 style="font-family:'Fraunces',serif; font-size:22px; margin-top:0;">¿Cuál es tu objetivo ahora mismo?</h2>
+        <div class="lm-options">
+          <button class="lm-opt-btn" data-value="ganar" onclick="selectObjetivo('ganar', this)">💪 Ganar masa muscular / peso</button>
+          <button class="lm-opt-btn" data-value="perder" onclick="selectObjetivo('perder', this)">🔥 Perder peso / grasa</button>
+        </div>
+      </div>
+
+      <!-- Paso 2: Freno -->
+      <div class="lm-step" id="step2">
+        <h2 style="font-family:'Fraunces',serif; font-size:22px; margin-top:0;">¿Qué es lo que más te frena?</h2>
+        <div class="lm-options" id="frenoOptions"></div>
+        <div class="lm-nav">
+          <button class="lm-back" onclick="goToStep(1)">← Atrás</button>
+        </div>
+      </div>
+
+      <!-- Paso 3: Peso -->
+      <div class="lm-step" id="step3">
+        <h2 style="font-family:'Fraunces',serif; font-size:22px; margin-top:0;">¿Cuál es tu peso actual? (kg)</h2>
+        <input type="number" id="pesoInput" class="lm-input" placeholder="Ej: 78" min="30" max="200">
+        <div class="lm-nav">
+          <button class="lm-back" onclick="goToStep(2)">← Atrás</button>
+          <a href="#" class="btn btn-solid" onclick="verResultado(); return false;">Ver mi resultado →</a>
+        </div>
+      </div>
+
+      <!-- Paso 4: Resultado -->
+      <div class="lm-step" id="step4">
+        <h2 style="font-family:'Fraunces',serif; font-size:22px; margin-top:0;">Tu diagnóstico</h2>
+        <div class="lm-result-box" id="resultDiagnostico"></div>
+
+        <p style="font-family:'Inter',sans-serif; font-size:14px; color:var(--ink);">Esto es una orientación general, no sustituye asesoramiento profesional de nutrición o salud.</p>
+
+        <h3 style="font-family:'Fraunces',serif; margin-top:28px;">Tu plan a medida</h3>
+        <div class="lm-plans">
+          <div class="lm-plan">
+            <h3>Lab Muscular</h3>
+            <p>Diagnóstico completo + plan de acción calculado para tu objetivo y tu peso.</p>
+            <p class="price">19€</p>
+            <a href="https://buy.stripe.com/bJe8wPbVR5VU7EGa0oaIM00" class="btn btn-solid" target="_blank" rel="noopener">Quiero mi plan (19€)</a>
+          </div>
+          <div class="lm-plan">
+            <h3>Pack + Tabla de seguimiento</h3>
+            <p>Todo lo anterior + tabla de seguimiento semanal para no perder el rumbo.</p>
+            <p class="price">29€</p>
+            <a href="https://buy.stripe.com/3cIbJ1bVRfwu2km1tSaIM01" class="btn btn-solid" target="_blank" rel="noopener">Quiero el pack completo (29€)</a>
+          </div>
+        </div>
+
+        <div class="lm-nav">
+          <button class="lm-back" onclick="goToStep(3)">← Atrás</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <p>© 2026 Respira Coaching. Todos los derechos reservados.</p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="about.html">Sobre el proyecto</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  let objetivo = null;
+  let freno = null;
+
+  const frenosGanar = [
+    { v: "no_recupero", t: "😴 No recupero, siempre estoy cansado/a" },
+    { v: "no_resultados", t: "📉 Entreno pero no veo resultados" },
+    { v: "constancia", t: "🌀 Me cuesta ser constante" },
+    { v: "alimentacion", t: "🍽️ No sé cuánto ni qué comer" }
+  ];
+
+  const frenosPerder = [
+    { v: "ansiedad", t: "😰 La ansiedad me hace descarrilar" },
+    { v: "retencion", t: "💧 Me hincho / retengo líquidos" },
+    { v: "constancia", t: "🌀 Me cuesta ser constante" },
+    { v: "no_resultados", t: "📉 Hago dieta pero no bajo de peso" }
+  ];
+
+  function selectObjetivo(valor, btn) {
+    objetivo = valor;
+    document.querySelectorAll('#step1 .lm-opt-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+
+    const opts = valor === 'ganar' ? frenosGanar : frenosPerder;
+    const container = document.getElementById('frenoOptions');
+    container.innerHTML = '';
+    opts.forEach(o => {
+      const b = document.createElement('button');
+      b.className = 'lm-opt-btn';
+      b.dataset.value = o.v;
+      b.textContent = o.t;
+      b.onclick = () => selectFreno(o.v, b);
+      container.appendChild(b);
+    });
+
+    setTimeout(() => goToStep(2), 200);
+  }
+
+  function selectFreno(valor, btn) {
+    freno = valor;
+    document.querySelectorAll('#step2 .lm-opt-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    setTimeout(() => goToStep(3), 200);
+  }
+
+  function goToStep(n) {
+    document.querySelectorAll('.lm-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step' + n).classList.add('active');
+    for (let i = 1; i <= 4; i++) {
+      document.getElementById('bar' + i).classList.toggle('done', i <= n);
+    }
+  }
+
+  function verResultado() {
+    const peso = parseFloat(document.getElementById('pesoInput').value);
+    const box = document.getElementById('resultDiagnostico');
+
+    if (!peso || peso < 30 || peso > 200) {
+      box.innerHTML = '<p>Introduce un peso válido para calcular tu resultado.</p>';
+      goToStep(4);
+      return;
+    }
+
+    let texto = '';
+
+    if (objetivo === 'ganar') {
+      const dosisCreatina = Math.max(3, Math.round(peso * 0.04 * 10) / 10);
+      texto += `<p><strong>Objetivo:</strong> ganar masa muscular / peso.</p>`;
+      texto += `<p><strong>Dosis orientativa de creatina:</strong> ~${dosisCreatina} g/día.</p>`;
+      if (freno === 'no_recupero') texto += `<p>Tu freno principal parece ser el <strong>descanso</strong>: sin recuperación adecuada, el músculo no crece por mucho que entrenes.</p>`;
+      if (freno === 'no_resultados') texto += `<p>Tu freno principal parece ser el <strong>estímulo/progresión</strong>: puede que el entrenamiento no esté siendo suficientemente exigente o progresivo.</p>`;
+      if (freno === 'constancia') texto += `<p>Tu freno principal parece ser la <strong>constancia</strong>: un plan simple y claro te ayudará a no depender de la motivación del día.</p>`;
+      if (freno === 'alimentacion') texto += `<p>Tu freno principal parece ser la <strong>alimentación</strong>: sin un superávit calórico y proteína suficiente, es muy difícil ganar masa muscular.</p>`;
+    } else {
+      const deficitEstimado = Math.round(peso * 24 * 0.18);
+      texto += `<p><strong>Objetivo:</strong> perder peso / grasa.</p>`;
+      texto += `<p><strong>Déficit calórico orientativo:</strong> ~${deficitEstimado} kcal/día por debajo de tu mantenimiento.</p>`;
+      if (freno === 'ansiedad') texto += `<p>Tu freno principal parece ser la <strong>ansiedad con la comida</strong>: sin trabajar esto, cualquier dieta se vuelve insostenible a medio plazo.</p>`;
+      if (freno === 'retencion') texto += `<p>Tu freno principal parece ser la <strong>retención de líquidos</strong>: puede estar enmascarando tu progreso real en la báscula.</p>`;
+      if (freno === 'constancia') texto += `<p>Tu freno principal parece ser la <strong>constancia</strong>: un plan simple y claro te ayudará a no depender de la motivación del día.</p>`;
+      if (freno === 'no_resultados') texto += `<p>Tu freno principal parece ser un <strong>déficit mal calculado</strong>: puede que no sea tan agresivo (o tan sostenible) como necesitas.</p>`;
+    }
+
+    box.innerHTML = texto;
+    goToStep(4);
+  }
+</script>
+
+</body>
+</html>
