@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu plan personalizado · Respira Coaching</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .plan-wrap { max-width: 700px; margin: 0 auto; }
+  .plan-card {
+    background: var(--sand-light, #F3EDE0);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 20px;
+  }
+  .plan-section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 18px;
+    border-left: 4px solid var(--clay, #B5654A);
+  }
+  .plan-section h3 { font-family:'Fraunces',serif; margin-top:0; }
+  .macro-grid {
+    display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;
+  }
+  .macro-box {
+    flex:1; min-width:120px; background: var(--sand, #E8DCC8);
+    border-radius:10px; padding:14px; text-align:center;
+  }
+  .macro-box .num { font-family:'IBM Plex Mono',monospace; font-size:22px; color:var(--clay,#B5654A); display:block; }
+  .no-data { text-align:center; padding:40px 20px; }
+  @media print {
+    header, footer, .no-print { display:none !important; }
+    body { background:#fff; }
+  }
+</style>
+</head>
+<body>
+
+<header class="no-print">
+  <nav class="nav">
+    <a href="index.html" class="logo">respira<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#servicios">Cómo funciona</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="section-alt">
+  <div class="wrap plan-wrap">
+    <div id="content">
+      <p style="text-align:center;">Cargando tu plan...</p>
+    </div>
+  </div>
+</section>
+
+<footer class="no-print">
+  <div class="wrap footer-grid">
+    <p>© 2026 Respira Coaching. Todos los derechos reservados.</p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="about.html">Sobre el proyecto</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const objetivo = params.get('o');
+  const freno = params.get('f');
+  const peso = parseFloat(params.get('p'));
+  const planTipo = params.get('plan') || 'basico';
+  const content = document.getElementById('content');
+
+  if (!objetivo || !peso) {
+    content.innerHTML = `
+      <div class="no-data">
+        <h1 style="font-family:'Fraunces',serif;">¡Gracias por tu compra! 🎉</h1>
+        <p>Este enlace no tiene tus datos. Usa el enlace personal que guardaste al hacer el test (el que copiaste antes de pagar).</p>
+        <p>Si lo perdiste, escríbenos a <strong>malabueno30@gmail.com</strong> con tu objetivo, freno y peso, y te lo regeneramos.</p>
+      </div>`;
+  } else {
+    renderPlan({objetivo, freno, peso}, planTipo);
+  }
+
+  function renderPlan(data, planTipo) {
+    const peso = data.peso;
+    const objetivo = data.objetivo;
+    const freno = data.freno;
+
+    let calorias, proteina, grasas, carbos, tituloObjetivo;
+
+    if (objetivo === 'ganar') {
+      tituloObjetivo = 'Plan de ganancia de masa muscular';
+      calorias = Math.round(peso * 33);
+      proteina = Math.round(peso * 2);
+      grasas = Math.round(peso * 1);
+      carbos = Math.round((calorias - (proteina*4) - (grasas*9)) / 4);
+    } else {
+      tituloObjetivo = 'Plan de pérdida de peso';
+      calorias = Math.round(peso * 24 * 0.82);
+      proteina = Math.round(peso * 2.2);
+      grasas = Math.round(peso * 0.8);
+      carbos = Math.round((calorias - (proteina*4) - (grasas*9)) / 4);
+    }
+
+    const creatina = objetivo === 'ganar' ? Math.max(3, Math.round(peso * 0.04 * 10) / 10) : null;
+
+    const frenoTextos = {
+      no_recupero: 'Prioriza el descanso: 7-9h de sueño y al menos 1-2 días de descanso activo por semana. Sin recuperación, no hay progreso.',
+      no_resultados: 'Aplica sobrecarga progresiva: sube peso o repeticiones cada 1-2 semanas en tus ejercicios principales.',
+      constancia: 'Empieza con solo 3 entrenamientos/semana fijos en el calendario. La constancia le gana a la intensidad a largo plazo.',
+      alimentacion: 'Pesa tu comida al menos la primera semana para calibrar. Sin saber cuánto comes, es imposible ajustar el plan.',
+      ansiedad: 'Introduce una comida "libre" planificada a la semana, sin culpa. Prohibirlo todo aumenta la ansiedad y el atracón posterior.',
+      retencion: 'Reduce el sodio procesado y bebe suficiente agua (paradójicamente, beber más ayuda a retener menos). Pésate solo 1 vez/semana, en ayunas.'
+    };
+
+    const entrenamiento = objetivo === 'ganar'
+      ? ['Día 1: Empuje (pecho, hombro, tríceps)', 'Día 2: Descanso o cardio suave', 'Día 3: Tirón (espalda, bíceps)', 'Día 4: Descanso', 'Día 5: Pierna completa', 'Día 6-7: Descanso']
+      : ['Día 1: Fuerza full body + 15 min cardio', 'Día 2: Cardio moderado 30-40 min', 'Día 3: Fuerza full body + 15 min cardio', 'Día 4: Descanso o caminata larga', 'Día 5: Fuerza full body + 15 min cardio', 'Día 6-7: Descanso activo'];
+
+    content.innerHTML = `
+      <div class="no-print" style="text-align:center; margin-bottom:10px;">
+        <span style="font-size:40px;">✅</span>
+      </div>
+      <h1 style="font-family:'Fraunces',serif; text-align:center;">¡Gracias por tu compra!</h1>
+      <p style="text-align:center;">Aquí tienes tu plan personalizado, calculado para tu peso (${peso} kg) y tu objetivo.</p>
+
+      <div class="plan-card">
+        <h2 style="font-family:'Fraunces',serif; margin-top:0;">${tituloObjetivo}</h2>
+
+        <div class="macro-grid">
+          <div class="macro-box"><span class="num">${calorias}</span>kcal/día</div>
+          <div class="macro-box"><span class="num">${proteina}g</span>proteína</div>
+          <div class="macro-box"><span class="num">${grasas}g</span>grasas</div>
+          <div class="macro-box"><span class="num">${carbos}g</span>carbohidratos</div>
+        </div>
+
+        ${creatina ? `<div class="plan-section"><h3>Suplementación</h3><p>Creatina monohidrato: <strong>${creatina} g/día</strong>, tomada en cualquier momento del día de forma constante.</p></div>` : ''}
+
+        <div class="plan-section">
+          <h3>Tu freno principal</h3>
+          <p>${frenoTextos[freno] || 'Mantén constancia y revisa tu progreso cada 1-2 semanas.'}</p>
+        </div>
+
+        <div class="plan-section">
+          <h3>Estructura de entrenamiento semanal</h3>
+          <ul>${entrenamiento.map(d => `<li>${d}</li>`).join('')}</ul>
+        </div>
+
+        <div class="plan-section">
+          <h3>Seguimiento</h3>
+          <p>Revisa tu peso y medidas cada 1-2 semanas. Si en ese tiempo no ves movimiento en la dirección correcta, ajusta las calorías en un 5-10% (arriba si quieres ganar, abajo si quieres perder) — no cambies de plan entero.</p>
+        </div>
+
+        ${planTipo === 'pack' ? `<div class="plan-section"><h3>Tabla de seguimiento</h3><p>Incluida en tu pack: descarga aquí tu plantilla semanal para anotar peso, medidas y entrenamientos. <em>(pendiente: sustituir por tu enlace real de descarga)</em></p></div>` : ''}
+
+        <p style="font-size:14px; color:var(--ink); margin-top:20px;">Esta es una orientación general basada en fórmulas estándar, no sustituye asesoramiento médico o nutricional personalizado.</p>
+
+        <div class="no-print" style="text-align:center; margin-top:24px;">
+          <button onclick="window.print()" class="btn btn-solid">🖨️ Guardar/Imprimir como PDF</button>
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
