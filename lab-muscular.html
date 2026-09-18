@@ -137,8 +137,8 @@
         <p style="font-family:'Inter',sans-serif; font-size:14px; color:var(--ink);">Esto es una orientación general, no sustituye asesoramiento profesional de nutrición o salud.</p>
 
         <div class="lm-link-box">
-          <strong>📎 Guarda tu enlace personal</strong>
-          <p style="font-size:14px;">Este enlace lleva tu plan completo. Guárdalo (favoritos, notas, o mándatelo a ti mismo) antes de pagar — lo necesitarás para ver tu plan detallado.</p>
+          <strong>📎 Guarda tu enlace personal (por si acaso)</strong>
+          <p style="font-size:14px;">Ya no es imprescindible, pero puedes guardarlo como respaldo por si el pago falla en pasar tus datos.</p>
           <input type="text" id="enlacePersonalInput" readonly onclick="this.select();">
           <button onclick="copiarEnlace()" class="btn btn-solid" style="margin-top:8px; font-size:14px;">📋 Copiar enlace</button>
         </div>
@@ -149,13 +149,13 @@
             <h3>Lab Muscular</h3>
             <p>Diagnóstico completo + plan de acción calculado para tu objetivo y tu peso.</p>
             <p class="price">19€</p>
-            <a href="https://buy.stripe.com/bJe8wPbVR5VU7EGa0oaIM00" class="btn btn-solid" target="_blank" rel="noopener">Quiero mi plan (19€)</a>
+            <a id="buyBasico" href="https://buy.stripe.com/bJe8wPbVR5VU7EGa0oaIM00" class="btn btn-solid" target="_blank" rel="noopener">Quiero mi plan (19€)</a>
           </div>
           <div class="lm-plan">
             <h3>Pack + Tabla de seguimiento</h3>
             <p>Todo lo anterior + tabla de seguimiento semanal para no perder el rumbo.</p>
             <p class="price">29€</p>
-            <a href="https://buy.stripe.com/3cIbJ1bVRfwu2km1tSaIM01" class="btn btn-solid" target="_blank" rel="noopener">Quiero el pack completo (29€)</a>
+            <a id="buyPack" href="https://buy.stripe.com/3cIbJ1bVRfwu2km1tSaIM01" class="btn btn-solid" target="_blank" rel="noopener">Quiero el pack completo (29€)</a>
           </div>
         </div>
 
@@ -243,9 +243,14 @@
       return;
     }
 
-    // Generamos su enlace personal con el plan codificado en la URL
+    // Enlace personal de respaldo
     const enlacePersonal = `gracias-lab-muscular.html?o=${objetivo}&f=${freno}&p=${peso}`;
     document.getElementById('enlacePersonalInput').value = window.location.origin + window.location.pathname.replace('lab-muscular.html','') + enlacePersonal;
+
+    // Datos metidos en utm_content para que viajen solos a través del pago de Stripe
+    const utmDatos = encodeURIComponent(`${objetivo}-${freno}-${peso}`);
+    document.getElementById('buyBasico').href = `https://buy.stripe.com/bJe8wPbVR5VU7EGa0oaIM00?utm_content=${utmDatos}`;
+    document.getElementById('buyPack').href = `https://buy.stripe.com/3cIbJ1bVRfwu2km1tSaIM01?utm_content=${utmDatos}`;
 
     let texto = '';
 
@@ -275,7 +280,7 @@
     const input = document.getElementById('enlacePersonalInput');
     input.select();
     navigator.clipboard.writeText(input.value);
-    alert('¡Enlace copiado! Guárdalo antes de pagar.');
+    alert('¡Enlace copiado! Guárdalo por si acaso.');
   }
 </script>
 
